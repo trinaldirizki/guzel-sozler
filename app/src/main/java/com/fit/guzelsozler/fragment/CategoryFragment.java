@@ -2,6 +2,8 @@ package com.fit.guzelsozler.fragment;
 
 import android.view.View;
 
+import com.fit.guzelsozler.R;
+
 /**
  * Created by trinaldi on 2/16/18.
  */
@@ -9,7 +11,7 @@ import android.view.View;
 public class CategoryFragment extends BaseFragment {
     @Override
     protected int getLayoutId() {
-        return 0;
+        return R.layout.fragment_category;
     }
 
     @Override
