@@ -3,4 +3,11 @@
     <string name="title_home">Anasayfa</string>
     <string name="title_category">Kategoriler</string>
     <string name="title_favorite">Favorilerim</string>
+    <string-array name="array_quotes">
+        <item>Random</item>
+        <item>Random</item>
+        <item>Random</item>
+        <item>Random</item>
+        <item>Random</item>
+    </string-array>
 </resources>

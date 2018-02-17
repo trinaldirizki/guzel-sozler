@@ -11,6 +11,8 @@ import com.fit.guzelsozler.fragment.BaseFragment;
 
 public class HomeFragment extends BaseFragment {
 
+    private static final String HOME_FRAGMENT = "HomeFragment";
+
     @Override
     protected int getLayoutId() {
         return R.layout.fragment_home;
@@ -23,6 +25,6 @@ public class HomeFragment extends BaseFragment {
 
     @Override
     public String getFragmentTag() {
-        return null;
+        return HOME_FRAGMENT;
     }
 }

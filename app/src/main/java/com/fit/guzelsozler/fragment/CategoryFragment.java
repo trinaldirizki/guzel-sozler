@@ -9,6 +9,9 @@ import com.fit.guzelsozler.R;
  */
 
 public class CategoryFragment extends BaseFragment {
+
+    private static final String CATEGORY_FRAGMENT = "CategoryFragment";
+
     @Override
     protected int getLayoutId() {
         return R.layout.fragment_category;
@@ -21,6 +24,6 @@ public class CategoryFragment extends BaseFragment {
 
     @Override
     public String getFragmentTag() {
-        return null;
+        return CATEGORY_FRAGMENT;
     }
 }

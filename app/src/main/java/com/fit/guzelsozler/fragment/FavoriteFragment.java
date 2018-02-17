@@ -9,6 +9,9 @@ import com.fit.guzelsozler.R;
  */
 
 public class FavoriteFragment extends BaseFragment {
+
+    private static final String FAVORITE_FRAGMENT = "FavoriteFragment";
+
     @Override
     protected int getLayoutId() {
         return R.layout.fragment_favorite;
@@ -21,6 +24,6 @@ public class FavoriteFragment extends BaseFragment {
 
     @Override
     public String getFragmentTag() {
-        return null;
+        return FAVORITE_FRAGMENT;
     }
 }
