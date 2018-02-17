@@ -1,30 +1,47 @@
 package com.fit.guzelsozler;
 
+import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.fit.guzelsozler.fragment.CategoryFragment;
+import com.fit.guzelsozler.fragment.FavoriteFragment;
+import com.fit.guzelsozler.fragment.HomeFragment;
+import com.fit.guzelsozler.util.FragmentUtil;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView mTextMessage;
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_options, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            LinearLayout layout = (LinearLayout) findViewById(R.id.fragment_base);
+            layout.removeAllViews();
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
+                    getSupportActionBar().setSubtitle(R.string.title_home);
+                    FragmentUtil.open(getFragmentManager(),R.id.fragment_base,new HomeFragment());
                     return true;
                 case R.id.navigation_category:
-                    mTextMessage.setText(R.string.title_category);
+                    getSupportActionBar().setSubtitle(R.string.title_category);
+                    FragmentUtil.open(getFragmentManager(),R.id.fragment_base,new CategoryFragment());
                     return true;
                 case R.id.navigation_favorite:
-                    mTextMessage.setText(R.string.title_favorite);
+                    getSupportActionBar().setSubtitle(R.string.title_favorite);
+                    FragmentUtil.open(getFragmentManager(),R.id.fragment_base,new FavoriteFragment());
                     return true;
             }
             return false;
@@ -36,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mTextMessage = (TextView) findViewById(R.id.message);
+        getSupportActionBar().setSubtitle(getString(R.string.title_home));
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
