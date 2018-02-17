@@ -11,7 +11,7 @@ import com.fit.guzelsozler.fragment.BaseFragment;
 
 public class HomeFragment extends BaseFragment {
 
-    private static final String HOME_FRAGMENT = "HomeFragment";
+    private static final String HOME_FRAGMENT = HomeFragment.class.getSimpleName();
 
     @Override
     protected int getLayoutId() {

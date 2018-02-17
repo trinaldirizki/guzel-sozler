@@ -10,7 +10,7 @@ import com.fit.guzelsozler.R;
 
 public class CategoryFragment extends BaseFragment {
 
-    private static final String CATEGORY_FRAGMENT = "CategoryFragment";
+    private static final String CATEGORY_FRAGMENT = CategoryFragment.class.getSimpleName();
 
     @Override
     protected int getLayoutId() {

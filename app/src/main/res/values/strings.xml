@@ -4,6 +4,8 @@
     <string name="title_category">Kategoriler</string>
     <string name="title_favorite">Favorilerim</string>
     <string name="title_credits">Credits</string>
+    <string name="quote_detail">Quote</string>
+    <string name="quote_category">Category</string>
     <string-array name="array_quotes">
         <item>Random</item>
         <item>Random</item>

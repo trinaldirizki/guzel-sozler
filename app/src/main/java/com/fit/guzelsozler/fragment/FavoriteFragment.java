@@ -10,7 +10,7 @@ import com.fit.guzelsozler.R;
 
 public class FavoriteFragment extends BaseFragment {
 
-    private static final String FAVORITE_FRAGMENT = "FavoriteFragment";
+    private static final String FAVORITE_FRAGMENT = FavoriteFragment.class.getSimpleName();
 
     @Override
     protected int getLayoutId() {
