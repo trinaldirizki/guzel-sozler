@@ -64,14 +64,12 @@ public class QuoteAdapter extends RecyclerView.Adapter<QuoteAdapter.QuoteHolder>
             @Override
             public void onClick(View view) {
                 Toast.makeText(view.getContext(), "Copy", Toast.LENGTH_SHORT).show();
-
             }
         });
         holder.buttonShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(view.getContext(), "Share", Toast.LENGTH_SHORT).show();
-
             }
         });
     }
