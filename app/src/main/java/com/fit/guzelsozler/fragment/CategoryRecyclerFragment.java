@@ -2,6 +2,9 @@ package com.fit.guzelsozler.fragment;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.ArrayAdapter;
+
+import com.fit.guzelsozler.R;
 
 /**
  * Created by trinaldi on 2/17/18.
@@ -10,12 +13,12 @@ import android.view.View;
 public class CategoryRecyclerFragment extends BaseRecyclerFragment {
     @Override
     protected int getLayoutId() {
-        return 0;
+        return R.layout.fragment_category;
     }
 
     @Override
     public String getFragmentTag() {
-        return null;
+        return CategoryRecyclerFragment.class.getSimpleName();
     }
 
     @Override
@@ -25,12 +28,12 @@ public class CategoryRecyclerFragment extends BaseRecyclerFragment {
 
     @Override
     protected int getRecyclerId() {
-        return 0;
+        return R.id.recycler_category;
     }
 
     @Override
     protected RecyclerView.Adapter getAdapter() {
-        return null;
+        return null
     }
 
     @Override
