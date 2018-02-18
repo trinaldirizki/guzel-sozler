@@ -50,6 +50,6 @@ public class HomeRecyclerFragment extends BaseRecyclerFragment {
         mQuoteList = new ArrayList<>();
         mQuoteArray = getResources().getStringArray(R.array.ask_sozleri);
         for (String s : mQuoteArray)
-            mQuoteList.add(new Quote(s, "Aşk"));
+            mQuoteList.add(new Quote(s, "Kategori", false));
     }
 }

@@ -8,6 +8,7 @@ import android.view.View;
  */
 
 public class FavoriteRecyclerFragment extends BaseRecyclerFragment {
+
     @Override
     protected int getLayoutId() {
         return 0;

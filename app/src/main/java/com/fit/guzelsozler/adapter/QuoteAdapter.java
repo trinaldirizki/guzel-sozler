@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -49,29 +50,31 @@ public class QuoteAdapter extends RecyclerView.Adapter<QuoteAdapter.QuoteHolder>
 
     @Override
     public void onBindViewHolder(QuoteHolder holder, int position) {
-        Quote quote = quoteList.get(position);
+        final Quote quote = quoteList.get(position);
         holder.textQuote.setText(quote.getName());
         holder.textCategory.setText(quote.getCategory());
         holder.buttonAddToFavorites.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(), "Add to favorites", Toast.LENGTH_SHORT).show();
+                Toast.makeText(view.getContext(), "Favorilerim'e eklendi", Toast.LENGTH_SHORT).show();
+                quote.setFavorite(true);
             }
         });
         holder.buttonCopy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(view.getContext(), "Copy", Toast.LENGTH_SHORT).show();
+
             }
         });
         holder.buttonShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(view.getContext(), "Share", Toast.LENGTH_SHORT).show();
+
             }
         });
     }
-
 
     @Override
     public int getItemCount() {
