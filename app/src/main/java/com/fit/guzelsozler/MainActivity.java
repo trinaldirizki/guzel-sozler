@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.fit.guzelsozler.fragment.CategoryFragment;
+import com.fit.guzelsozler.fragment.CategoryRecyclerFragment;
 import com.fit.guzelsozler.fragment.FavoriteFragment;
 import com.fit.guzelsozler.fragment.HomeFragment;
 import com.fit.guzelsozler.fragment.HomeRecyclerFragment;
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 case R.id.navigation_category:
                     getSupportActionBar().setSubtitle(R.string.title_category);
-                    FragmentUtil.open(getFragmentManager(),R.id.fragment_base,new CategoryFragment());
+                    FragmentUtil.open(getFragmentManager(),R.id.fragment_base,new CategoryRecyclerFragment());
                     return true;
                 case R.id.navigation_favorite:
                     getSupportActionBar().setSubtitle(R.string.title_favorite);

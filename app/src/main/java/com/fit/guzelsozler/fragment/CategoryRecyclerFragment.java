@@ -5,12 +5,21 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 
 import com.fit.guzelsozler.R;
+import com.fit.guzelsozler.adapter.CategoryAdapter;
+import com.fit.guzelsozler.model.Category;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by trinaldi on 2/17/18.
  */
 
 public class CategoryRecyclerFragment extends BaseRecyclerFragment {
+
+    List<Category> mListCategory;
+    String[] mArrayCategory;
+
     @Override
     protected int getLayoutId() {
         return R.layout.fragment_category;
@@ -33,11 +42,14 @@ public class CategoryRecyclerFragment extends BaseRecyclerFragment {
 
     @Override
     protected RecyclerView.Adapter getAdapter() {
-        return null
+        return new CategoryAdapter(mListCategory);
     }
 
     @Override
     protected void setRecyclerViewData() {
-
+        mListCategory = new ArrayList<>();
+        mArrayCategory = getResources().getStringArray(R.array.array_category);
+        for (String s : mArrayCategory)
+            mListCategory.add(new Category(s));
     }
 }
