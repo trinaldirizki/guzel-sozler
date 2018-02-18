@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.fit.guzelsozler.fragment.CategoryFragment;
 import com.fit.guzelsozler.fragment.FavoriteFragment;
 import com.fit.guzelsozler.fragment.HomeFragment;
+import com.fit.guzelsozler.fragment.HomeRecyclerFragment;
 import com.fit.guzelsozler.util.FragmentUtil;
 
 public class MainActivity extends AppCompatActivity {
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
                     getSupportActionBar().setSubtitle(R.string.title_home);
-                    FragmentUtil.open(getFragmentManager(),R.id.fragment_base,new HomeFragment());
+                    FragmentUtil.open(getFragmentManager(),R.id.fragment_base,new HomeRecyclerFragment());
                     return true;
                 case R.id.navigation_category:
                     getSupportActionBar().setSubtitle(R.string.title_category);

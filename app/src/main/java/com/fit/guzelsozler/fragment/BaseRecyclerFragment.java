@@ -14,12 +14,13 @@ public abstract class BaseRecyclerFragment extends BaseFragment {
     RecyclerView recyclerView;
 
     public BaseRecyclerFragment() {
-        setRecyclerViewData();
+//        setRecyclerViewData();
     }
 
     @Override
     protected void setViewComponents(View view) {
         recyclerView = view.findViewById(getRecyclerId());
+        setRecyclerViewData();
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(getAdapter());

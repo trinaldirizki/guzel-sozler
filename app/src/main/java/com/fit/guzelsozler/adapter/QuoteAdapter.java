@@ -7,7 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.fit.guzelsozler.MainActivity;
 import com.fit.guzelsozler.R;
 import com.fit.guzelsozler.model.Quote;
 
@@ -19,7 +21,6 @@ import java.util.List;
 
 public class QuoteAdapter extends RecyclerView.Adapter<QuoteAdapter.QuoteHolder> {
 
-    private Context mContext;
     private List<Quote> quoteList;
 
     public class QuoteHolder extends RecyclerView.ViewHolder {
@@ -36,8 +37,7 @@ public class QuoteAdapter extends RecyclerView.Adapter<QuoteAdapter.QuoteHolder>
         }
     }
 
-    public QuoteAdapter(Context mContext, List<Quote> quoteList){
-        this.mContext = mContext;
+    public QuoteAdapter(List<Quote> quoteList){
         this.quoteList = quoteList;
     }
 
@@ -51,11 +51,30 @@ public class QuoteAdapter extends RecyclerView.Adapter<QuoteAdapter.QuoteHolder>
     public void onBindViewHolder(QuoteHolder holder, int position) {
         Quote quote = quoteList.get(position);
         holder.textQuote.setText(quote.getName());
+        holder.textCategory.setText(quote.getCategory());
+        holder.buttonAddToFavorites.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(view.getContext(), "Add to favorites", Toast.LENGTH_SHORT).show();
+            }
+        });
+        holder.buttonCopy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(view.getContext(), "Copy", Toast.LENGTH_SHORT).show();
+            }
+        });
+        holder.buttonShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(view.getContext(), "Share", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
 
     @Override
     public int getItemCount() {
-        return 0;
+        return quoteList.size();
     }
 }
