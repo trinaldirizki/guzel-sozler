@@ -22,6 +22,7 @@ public class HomeRecyclerFragment extends BaseRecyclerFragment {
     List<Quote> mQuoteList;
     String[] mQuoteArray;
 
+
     @Override
     protected int getLayoutId() {
         return R.layout.fragment_home;
@@ -43,13 +44,13 @@ public class HomeRecyclerFragment extends BaseRecyclerFragment {
     }
 
     @Override
-    protected RecyclerView.Adapter getAdapter() { return new QuoteAdapter(mQuoteList); }
+    protected RecyclerView.Adapter getAdapter() { return new QuoteAdapter(getActivity(), mQuoteList); }
 
     @Override
     protected void setRecyclerViewData() {
         mQuoteList = new ArrayList<>();
         mQuoteArray = getResources().getStringArray(R.array.ask_sozleri);
         for (String s : mQuoteArray)
-            mQuoteList.add(new Quote(s, "Kategori", false));
+            mQuoteList.add(new Quote(s, getActivity().getResources().getString(R.string.title_category), false));
     }
 }

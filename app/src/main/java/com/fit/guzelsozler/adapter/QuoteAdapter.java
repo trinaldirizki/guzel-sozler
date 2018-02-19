@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.fit.guzelsozler.MainActivity;
 import com.fit.guzelsozler.R;
 import com.fit.guzelsozler.model.Quote;
+import com.fit.guzelsozler.util.SharedPreferenceUtil;
 
 import java.util.List;
 
@@ -29,6 +30,8 @@ public class QuoteAdapter extends RecyclerView.Adapter<QuoteAdapter.QuoteHolder>
 
     private List<Quote> quoteList;
     private static final String COPIED_QUOTE = "CopiedQuote";
+    private Context context;
+    SharedPreferenceUtil sharedPreferenceUtil;
 
     public class QuoteHolder extends RecyclerView.ViewHolder {
         public TextView textQuote, textCategory;
@@ -45,8 +48,15 @@ public class QuoteAdapter extends RecyclerView.Adapter<QuoteAdapter.QuoteHolder>
     }
 
 
-    public QuoteAdapter(List<Quote> quoteList){
+    public QuoteAdapter(Context context, List<Quote> quoteList){
+        super();
+        this.context = context;
         this.quoteList = quoteList;
+        sharedPreferenceUtil = new SharedPreferenceUtil();
+    }
+
+    public Quote getItem(int position){
+        return quoteList.get(position);
     }
 
     @Override
@@ -85,6 +95,35 @@ public class QuoteAdapter extends RecyclerView.Adapter<QuoteAdapter.QuoteHolder>
                 view.getContext().startActivity(Intent.createChooser(intent,view.getResources().getString(R.string.title_share)));
             }
         });
+        if (checkFavoriteItem(quote)){
+            holder.buttonAddToFavorites.setBackgroundResource(R.drawable.ic_favorite);
+        } else {
+            holder.buttonAddToFavorites.setBackgroundResource(R.drawable.ic_action_add_to_favorites);
+        }
+    }
+
+    public boolean checkFavoriteItem(Quote quote){
+        boolean check = false;
+        List<Quote> favorites = sharedPreferenceUtil.getFavorites(context);
+        if (favorites != null){
+            for (Quote q : favorites){
+                if (q.equals(quote)){
+                    check = true;
+                    break;
+                }
+            }
+        }
+        return check;
+    }
+
+    public void add(Quote quote){
+        quoteList.add(quote);
+        notifyDataSetChanged();
+    }
+
+    public void remove(Quote quote){
+        quoteList.remove(quote);
+        notifyDataSetChanged();
     }
 
     @Override
