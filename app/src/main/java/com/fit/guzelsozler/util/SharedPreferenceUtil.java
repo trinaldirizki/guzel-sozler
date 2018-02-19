@@ -33,7 +33,7 @@ public class SharedPreferenceUtil {
         Gson gson = new Gson();
         String jsonFavorites = gson.toJson(favorites);
         editor.putString(FAVORITES, jsonFavorites);
-        editor.commit();
+        editor.apply();
     }
 
     public ArrayList<Quote> getFavorites(Context context) {

@@ -9,6 +9,7 @@
     <string name="title_share">Paylaş</string>
     <string name="title_copied">Kopyalandı</string>
     <string name="title_added_to_favorites">Favorilerim\'e eklendi</string>
+    <string name="title_removed_from_favorites">Favorilerim\'den çıkarıldı</string>
     <string-array name="array_category">
         <item>Aşk Sözleri</item>
         <item>Anlamlı Sözler</item>

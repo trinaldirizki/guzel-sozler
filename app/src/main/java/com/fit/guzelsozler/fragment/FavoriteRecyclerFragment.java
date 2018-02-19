@@ -41,7 +41,7 @@ public class FavoriteRecyclerFragment extends BaseRecyclerFragment {
 
     @Override
     protected RecyclerView.Adapter getAdapter() {
-        return new QuoteAdapter(mQuoteList);
+        return new QuoteAdapter(getActivity(), mQuoteList);
     }
 
     @Override
