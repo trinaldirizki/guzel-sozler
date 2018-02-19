@@ -1,12 +1,17 @@
 package com.fit.guzelsozler.adapter;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ShareActionProvider;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +28,7 @@ import java.util.List;
 public class QuoteAdapter extends RecyclerView.Adapter<QuoteAdapter.QuoteHolder> {
 
     private List<Quote> quoteList;
+    private static final String COPIED_QUOTE = "CopiedQuote";
 
     public class QuoteHolder extends RecyclerView.ViewHolder {
         public TextView textQuote, textCategory;
@@ -37,6 +43,7 @@ public class QuoteAdapter extends RecyclerView.Adapter<QuoteAdapter.QuoteHolder>
             buttonShare = view.findViewById(R.id.button_share);
         }
     }
+
 
     public QuoteAdapter(List<Quote> quoteList){
         this.quoteList = quoteList;
@@ -56,20 +63,26 @@ public class QuoteAdapter extends RecyclerView.Adapter<QuoteAdapter.QuoteHolder>
         holder.buttonAddToFavorites.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(), "Favorilerim'e eklendi", Toast.LENGTH_SHORT).show();
+                Toast.makeText(view.getContext(), R.string.title_added_to_favorites, Toast.LENGTH_SHORT).show();
                 quote.setFavorite(true);
             }
         });
         holder.buttonCopy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(), "Copy", Toast.LENGTH_SHORT).show();
+                ClipboardManager clipboardManager = (ClipboardManager) view.getContext().getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData clipData = ClipData.newPlainText(COPIED_QUOTE, quote.getName());
+                clipboardManager.setPrimaryClip(clipData);
+                Toast.makeText(view.getContext(), R.string.title_copied, Toast.LENGTH_SHORT).show();
             }
         });
         holder.buttonShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(), "Share", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                intent.putExtra(Intent.EXTRA_TEXT, quote.getName());
+                view.getContext().startActivity(Intent.createChooser(intent,view.getResources().getString(R.string.title_share)));
             }
         });
     }

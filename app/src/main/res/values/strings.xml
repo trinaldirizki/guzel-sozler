@@ -6,6 +6,9 @@
     <string name="title_credits">Credits</string>
     <string name="quote_detail">Quote</string>
     <string name="quote_category">Category</string>
+    <string name="title_share">Paylaş</string>
+    <string name="title_copied">Kopyalandı</string>
+    <string name="title_added_to_favorites">Favorilerim\'e eklendi</string>
     <string-array name="array_category">
         <item>Aşk Sözleri</item>
         <item>Anlamlı Sözler</item>
