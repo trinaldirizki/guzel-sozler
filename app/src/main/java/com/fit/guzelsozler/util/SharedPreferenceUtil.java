@@ -2,8 +2,8 @@ package com.fit.guzelsozler.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
 
-import com.fit.guzelsozler.R;
 import com.fit.guzelsozler.model.Quote;
 import com.google.gson.Gson;
 
@@ -33,7 +33,9 @@ public class SharedPreferenceUtil {
         Gson gson = new Gson();
         String jsonFavorites = gson.toJson(favorites);
         editor.putString(FAVORITES, jsonFavorites);
-        editor.apply();
+        editor.putString("TEST",  favorites.toString());
+        Log.i("Tag", jsonFavorites);
+        editor.commit();
     }
 
     public ArrayList<Quote> getFavorites(Context context) {
@@ -41,13 +43,14 @@ public class SharedPreferenceUtil {
         List<Quote> favorites;
 
         preferences = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+
         if (preferences.contains(FAVORITES)) {
             String jsonFavorites = preferences.getString(FAVORITES, null);
             Gson gson = new Gson();
             Quote[] favoriteItems = gson.fromJson(jsonFavorites, Quote[].class);
 
             favorites = Arrays.asList(favoriteItems);
-            favorites = new ArrayList<Quote>(favorites);
+            favorites = new ArrayList<>(favorites);
         } else {
             return null;
         }
@@ -58,15 +61,15 @@ public class SharedPreferenceUtil {
     public void addFavorite(Context context, Quote quote) {
         List<Quote> favorites = getFavorites(context);
         if (favorites == null) {
-            favorites = new ArrayList<Quote>();
+            favorites = new ArrayList<>();
         }
         favorites.add(quote);
-        saveFavorites(context,favorites);
+        saveFavorites(context, favorites);
     }
 
-    public void removeFavorite(Context context, Quote quote){
+    public void removeFavorite(Context context, Quote quote) {
         ArrayList<Quote> favorites = getFavorites(context);
-        if (favorites != null){
+        if (favorites != null) {
             favorites.remove(quote);
             saveFavorites(context, favorites);
         }

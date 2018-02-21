@@ -1,14 +1,18 @@
 package com.fit.guzelsozler.fragment;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 
 import com.fit.guzelsozler.R;
 import com.fit.guzelsozler.adapter.QuoteAdapter;
 import com.fit.guzelsozler.model.Quote;
+import com.fit.guzelsozler.util.SharedPreferenceUtil;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -45,7 +49,9 @@ public class HomeRecyclerFragment extends BaseRecyclerFragment {
     }
 
     @Override
-    protected RecyclerView.Adapter getAdapter() { return new QuoteAdapter(getActivity(), mQuoteList); }
+    protected RecyclerView.Adapter getAdapter() {
+        return new QuoteAdapter(getActivity(), mQuoteList);
+    }
 
     @Override
     protected void setRecyclerViewData() {

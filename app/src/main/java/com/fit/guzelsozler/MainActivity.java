@@ -16,6 +16,7 @@ import com.fit.guzelsozler.fragment.FavoriteFragment;
 import com.fit.guzelsozler.fragment.HomeFragment;
 import com.fit.guzelsozler.fragment.HomeRecyclerFragment;
 import com.fit.guzelsozler.util.FragmentUtil;
+import com.fit.guzelsozler.util.SharedPreferenceUtil;
 
 public class MainActivity extends AppCompatActivity {
 

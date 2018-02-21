@@ -1,5 +1,6 @@
 package com.fit.guzelsozler.adapter;
 
+import android.app.Activity;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
@@ -28,10 +29,11 @@ import java.util.List;
 
 public class QuoteAdapter extends RecyclerView.Adapter<QuoteAdapter.QuoteHolder> {
 
-    private List<Quote> quoteList;
+    List<Quote> quoteList;
     private static final String COPIED_QUOTE = "CopiedQuote";
     private Context context;
     SharedPreferenceUtil sharedPreferenceUtil;
+
 
     public class QuoteHolder extends RecyclerView.ViewHolder {
         public TextView textQuote, textCategory;
@@ -47,9 +49,7 @@ public class QuoteAdapter extends RecyclerView.Adapter<QuoteAdapter.QuoteHolder>
         }
     }
 
-
     public QuoteAdapter(Context context, List<Quote> quoteList) {
-        super();
         this.context = context;
         this.quoteList = quoteList;
         sharedPreferenceUtil = new SharedPreferenceUtil();
@@ -63,6 +63,8 @@ public class QuoteAdapter extends RecyclerView.Adapter<QuoteAdapter.QuoteHolder>
     public QuoteHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.template_card, parent, false);
         return new QuoteHolder(itemView);
+
+
     }
 
     @Override
@@ -133,7 +135,6 @@ public class QuoteAdapter extends RecyclerView.Adapter<QuoteAdapter.QuoteHolder>
         quoteList.add(quote);
         notifyDataSetChanged();
     }
-
 
     public void remove(Quote quote) {
         quoteList.remove(quote);
