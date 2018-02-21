@@ -1,18 +1,20 @@
 package com.fit.guzelsozler.model;
 
 import com.activeandroid.Model;
+import com.activeandroid.annotation.Column;
+import com.activeandroid.annotation.Table;
 
 /**
  * Created by trinaldi on 2/17/18.
  */
 
+@Table(name = "Quotes")
 public class Quote extends Model {
-
-}
-
-/*public class Quote {
+    @Column(name = "Name")
     private String name;
+    @Column(name = "Category")
     private String category;
+    @Column(name = "Favorite")
     private boolean favorite;
 
     public boolean isFavorite() {
@@ -65,4 +67,4 @@ public class Quote extends Model {
             return false;
         return true;
     }
-}*/
+}
