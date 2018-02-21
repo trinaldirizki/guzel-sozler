@@ -1,10 +1,16 @@
 package com.fit.guzelsozler.model;
 
+import com.activeandroid.Model;
+
 /**
  * Created by trinaldi on 2/17/18.
  */
 
-public class Quote {
+public class Quote extends Model {
+
+}
+
+/*public class Quote {
     private String name;
     private String category;
     private boolean favorite;
@@ -59,4 +65,4 @@ public class Quote {
             return false;
         return true;
     }
-}
+}*/
