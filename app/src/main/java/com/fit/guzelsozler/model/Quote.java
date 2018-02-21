@@ -25,12 +25,12 @@ public class Quote extends Model {
         this.favorite = favorite;
     }
 
-    public Quote(String name, boolean favorite) {
-        this.name = name;
-        this.favorite = favorite;
+    public Quote() {
+        super();
     }
 
     public Quote(String name, String category, boolean favorite) {
+        super();
         this.name = name;
         this.category = category;
         this.favorite = favorite;

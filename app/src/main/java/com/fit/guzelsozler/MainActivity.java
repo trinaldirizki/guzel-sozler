@@ -10,13 +10,18 @@ import android.view.MenuItem;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.activeandroid.ActiveAndroid;
 import com.fit.guzelsozler.fragment.CategoryFragment;
 import com.fit.guzelsozler.fragment.CategoryRecyclerFragment;
 import com.fit.guzelsozler.fragment.FavoriteFragment;
 import com.fit.guzelsozler.fragment.HomeFragment;
 import com.fit.guzelsozler.fragment.HomeRecyclerFragment;
+import com.fit.guzelsozler.model.Quote;
 import com.fit.guzelsozler.util.FragmentUtil;
 import com.fit.guzelsozler.util.SharedPreferenceUtil;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -59,6 +64,26 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setSubtitle(getString(R.string.title_home));
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+    }
+
+
+    public void initiliazeApp(){
+        ActiveAndroid.beginTransaction();
+        try {
+            List<Quote> mQuoteList = new ArrayList<>();
+            String[] quoteArray = getResources().getStringArray(R.array.ask_sozleri);
+            for (String s : quoteArray){
+                Quote quote = new Quote();
+                quote.setName(s);
+                quote.setCategory();
+                mQuoteList.add(new Quote(s, getResources().getString(R.string.title_category), false));
+            }
+
+
+            ActiveAndroid.setTransactionSuccessful();
+        } finally {
+            ActiveAndroid.endTransaction();
+        }
     }
 
 }
