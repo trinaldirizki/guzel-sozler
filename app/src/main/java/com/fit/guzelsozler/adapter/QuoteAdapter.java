@@ -32,7 +32,7 @@ public class QuoteAdapter extends RecyclerView.Adapter<QuoteAdapter.QuoteHolder>
     List<Quote> quoteList;
     private static final String COPIED_QUOTE = "CopiedQuote";
     private Context context;
-    SharedPreferenceUtil sharedPreferenceUtil;
+    // SharedPreferenceUtil sharedPreferenceUtil;
 
 
     public class QuoteHolder extends RecyclerView.ViewHolder {
@@ -52,7 +52,7 @@ public class QuoteAdapter extends RecyclerView.Adapter<QuoteAdapter.QuoteHolder>
     public QuoteAdapter(Context context, List<Quote> quoteList) {
         this.context = context;
         this.quoteList = quoteList;
-        sharedPreferenceUtil = new SharedPreferenceUtil();
+        // sharedPreferenceUtil = new SharedPreferenceUtil();
     }
 
     public Quote getItem(int position) {
@@ -63,8 +63,6 @@ public class QuoteAdapter extends RecyclerView.Adapter<QuoteAdapter.QuoteHolder>
     public QuoteHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.template_card, parent, false);
         return new QuoteHolder(itemView);
-
-
     }
 
     @Override
@@ -77,12 +75,14 @@ public class QuoteAdapter extends RecyclerView.Adapter<QuoteAdapter.QuoteHolder>
             public void onClick(View view) {
                 String tag = holder.buttonAddToFavorites.getTag().toString();
                 if (tag.equalsIgnoreCase("no_favorite_quote")) {
-                    sharedPreferenceUtil.addFavorite(context, quote);
+                    // sharedPreferenceUtil.addFavorite(context, quote);
+                    quote.setFavorite(true);
                     Toast.makeText(view.getContext(), R.string.title_added_to_favorites, Toast.LENGTH_SHORT).show();
                     holder.buttonAddToFavorites.setTag("favorite_quote");
                     holder.buttonAddToFavorites.setBackgroundResource(R.drawable.ic_favorite);
                 } else {
-                    sharedPreferenceUtil.removeFavorite(context, quote);
+                    // sharedPreferenceUtil.removeFavorite(context, quote);
+                    quote.setFavorite(false);
                     Toast.makeText(view.getContext(), R.string.title_removed_from_favorites, Toast.LENGTH_SHORT).show();
                     holder.buttonAddToFavorites.setTag("no_favorite_quote");
                     holder.buttonAddToFavorites.setBackgroundResource(R.drawable.ic_action_add_to_favorites);
@@ -94,6 +94,7 @@ public class QuoteAdapter extends RecyclerView.Adapter<QuoteAdapter.QuoteHolder>
             public void onClick(View view) {
                 ClipboardManager clipboardManager = (ClipboardManager) view.getContext().getSystemService(Context.CLIPBOARD_SERVICE);
                 ClipData clipData = ClipData.newPlainText(COPIED_QUOTE, quote.getName());
+                assert clipboardManager != null;
                 clipboardManager.setPrimaryClip(clipData);
                 Toast.makeText(view.getContext(), R.string.title_copied, Toast.LENGTH_SHORT).show();
             }
@@ -118,27 +119,7 @@ public class QuoteAdapter extends RecyclerView.Adapter<QuoteAdapter.QuoteHolder>
     }
 
     public boolean checkFavoriteItem(Quote quote) {
-        boolean check = false;
-        List<Quote> favorites = sharedPreferenceUtil.getFavorites(context);
-        if (favorites != null) {
-            for (Quote q : favorites) {
-                if (q.equals(quote)) {
-                    check = true;
-                    break;
-                }
-            }
-        }
-        return check;
-    }
-
-    public void add(Quote quote) {
-        quoteList.add(quote);
-        notifyDataSetChanged();
-    }
-
-    public void remove(Quote quote) {
-        quoteList.remove(quote);
-        notifyDataSetChanged();
+        return true;
     }
 
     @Override

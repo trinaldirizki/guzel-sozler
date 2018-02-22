@@ -73,4 +73,8 @@ public class Quote extends Model {
     public static List<Quote> getAll(){
         return new Select().from(Quote.class).orderBy("Name ASC").execute();
     }
+
+    public static List<Quote> getRandom(){
+        return new Select().from(Quote.class).limit(50).orderBy("RANDOM()").execute();
+    }
 }
