@@ -1,6 +1,7 @@
 package com.fit.guzelsozler;
 
 import android.app.Fragment;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -12,6 +13,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.activeandroid.ActiveAndroid;
+import com.activeandroid.Configuration;
+import com.activeandroid.Configuration.Builder;
 import com.facebook.stetho.Stetho;
 import com.fit.guzelsozler.fragment.CategoryFragment;
 import com.fit.guzelsozler.fragment.CategoryRecyclerFragment;
@@ -23,6 +26,7 @@ import com.fit.guzelsozler.util.DictionaryUtil;
 import com.fit.guzelsozler.util.FragmentUtil;
 import com.fit.guzelsozler.util.SharedPreferenceUtil;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -68,8 +72,22 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setSubtitle(getString(R.string.title_home));
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        checkDatabase();
+//        initiliazeApp();
+    }
 
-        initiliazeApp();
+    public void checkDatabase(){
+//        deleteDatabase("quote.db");
+        File dbQuote = getApplicationContext().getDatabasePath("quote.db");
+        if (dbQuote.exists()) {
+            Log.i("Database", "Database exists, " + dbQuote.getTotalSpace());
+            // use this only for deleting database if needed
+//            deleteDatabase("quote.db");
+//            initiliazeApp();
+        } else {
+            Log.i("Database", "Database initialized");
+//            initiliazeApp();
+        }
     }
 
     public void initiliazeApp() {

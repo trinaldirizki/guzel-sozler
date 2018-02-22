@@ -25,8 +25,6 @@ import java.util.List;
 public class HomeRecyclerFragment extends BaseRecyclerFragment {
 
     List<Quote> mQuoteList;
-    String[] mQuoteArray;
-
 
     @Override
     protected int getLayoutId() {
@@ -55,6 +53,6 @@ public class HomeRecyclerFragment extends BaseRecyclerFragment {
 
     @Override
     protected void setRecyclerViewData() {
-        mQuoteList = Quote.getRandom();
+        mQuoteList = Quote.getAll();
     }
 }

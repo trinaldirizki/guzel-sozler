@@ -56,19 +56,6 @@ public class Quote extends Model {
         this.name = name;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Quote other = (Quote) obj;
-        if (!name.equals(other))
-            return false;
-        return true;
-    }
 
     public static List<Quote> getAll(){
         return new Select().from(Quote.class).orderBy("Name ASC").execute();

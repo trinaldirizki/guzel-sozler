@@ -75,13 +75,11 @@ public class QuoteAdapter extends RecyclerView.Adapter<QuoteAdapter.QuoteHolder>
             public void onClick(View view) {
                 String tag = holder.buttonAddToFavorites.getTag().toString();
                 if (tag.equalsIgnoreCase("no_favorite_quote")) {
-                    // sharedPreferenceUtil.addFavorite(context, quote);
                     quote.setFavorite(true);
                     Toast.makeText(view.getContext(), R.string.title_added_to_favorites, Toast.LENGTH_SHORT).show();
                     holder.buttonAddToFavorites.setTag("favorite_quote");
                     holder.buttonAddToFavorites.setBackgroundResource(R.drawable.ic_favorite);
                 } else {
-                    // sharedPreferenceUtil.removeFavorite(context, quote);
                     quote.setFavorite(false);
                     Toast.makeText(view.getContext(), R.string.title_removed_from_favorites, Toast.LENGTH_SHORT).show();
                     holder.buttonAddToFavorites.setTag("no_favorite_quote");
