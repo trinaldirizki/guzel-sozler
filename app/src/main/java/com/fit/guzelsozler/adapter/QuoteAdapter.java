@@ -108,13 +108,13 @@ public class QuoteAdapter extends RecyclerView.Adapter<QuoteAdapter.QuoteHolder>
             }
         });
 
-        if (checkFavoriteItem(quote)) {
+        /*if (checkFavoriteItem(quote)) {
             holder.buttonAddToFavorites.setBackgroundResource(R.drawable.ic_favorite);
             holder.buttonAddToFavorites.setTag("favorite_quote");
         } else {
             holder.buttonAddToFavorites.setBackgroundResource(R.drawable.ic_action_add_to_favorites);
             holder.buttonAddToFavorites.setTag("no_favorite_quote");
-        }
+        }*/
     }
 
     public boolean checkFavoriteItem(Quote quote) {

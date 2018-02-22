@@ -5,18 +5,21 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.activeandroid.ActiveAndroid;
+import com.facebook.stetho.Stetho;
 import com.fit.guzelsozler.fragment.CategoryFragment;
 import com.fit.guzelsozler.fragment.CategoryRecyclerFragment;
 import com.fit.guzelsozler.fragment.FavoriteFragment;
 import com.fit.guzelsozler.fragment.HomeFragment;
 import com.fit.guzelsozler.fragment.HomeRecyclerFragment;
 import com.fit.guzelsozler.model.Quote;
+import com.fit.guzelsozler.util.DictionaryUtil;
 import com.fit.guzelsozler.util.FragmentUtil;
 import com.fit.guzelsozler.util.SharedPreferenceUtil;
 
@@ -41,15 +44,15 @@ public class MainActivity extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
                     getSupportActionBar().setSubtitle(R.string.title_home);
-                    FragmentUtil.open(getFragmentManager(),R.id.fragment_base,new HomeRecyclerFragment());
+                    FragmentUtil.open(getFragmentManager(), R.id.fragment_base, new HomeRecyclerFragment());
                     return true;
                 case R.id.navigation_category:
                     getSupportActionBar().setSubtitle(R.string.title_category);
-                    FragmentUtil.open(getFragmentManager(),R.id.fragment_base,new CategoryRecyclerFragment());
+                    FragmentUtil.open(getFragmentManager(), R.id.fragment_base, new CategoryRecyclerFragment());
                     return true;
                 case R.id.navigation_favorite:
                     getSupportActionBar().setSubtitle(R.string.title_favorite);
-                    FragmentUtil.open(getFragmentManager(),R.id.fragment_base,new FavoriteFragment());
+                    FragmentUtil.open(getFragmentManager(), R.id.fragment_base, new FavoriteFragment());
                     return true;
             }
             return false;
@@ -59,27 +62,32 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Stetho.initializeWithDefaults(this);
         setContentView(R.layout.activity_main);
 
         getSupportActionBar().setSubtitle(getString(R.string.title_home));
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        initiliazeApp();
     }
 
-
-    public void initiliazeApp(){
+    public void initiliazeApp() {
         ActiveAndroid.beginTransaction();
         try {
-            List<Quote> mQuoteList = new ArrayList<>();
-            String[] quoteArray = getResources().getStringArray(R.array.ask_sozleri);
-            for (String s : quoteArray){
-                Quote quote = new Quote();
-                quote.setName(s);
-                quote.setCategory();
-                mQuoteList.add(new Quote(s, getResources().getString(R.string.title_category), false));
+            DictionaryUtil dictionaryUtil = new DictionaryUtil(this);
+            dictionaryUtil.initDictionary();
+            String[] categories = getResources().getStringArray(R.array.array_category);
+            for (String s : categories) {
+                String[] items = getResources().getStringArray((int) dictionaryUtil.getValue(s));
+                for (String item : items) {
+                    Quote quote = new Quote();
+                    quote.setCategory(s);
+                    quote.setName(item);
+                    quote.setFavorite(false);
+                    quote.save();
+                }
             }
-
-
             ActiveAndroid.setTransactionSuccessful();
         } finally {
             ActiveAndroid.endTransaction();

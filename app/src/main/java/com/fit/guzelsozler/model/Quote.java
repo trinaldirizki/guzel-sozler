@@ -3,6 +3,9 @@ package com.fit.guzelsozler.model;
 import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
+import com.activeandroid.query.Select;
+
+import java.util.List;
 
 /**
  * Created by trinaldi on 2/17/18.
@@ -46,7 +49,6 @@ public class Quote extends Model {
 
 
     public String getName() {
-
         return name;
     }
 
@@ -66,5 +68,9 @@ public class Quote extends Model {
         if (!name.equals(other))
             return false;
         return true;
+    }
+
+    public static List<Quote> getAll(){
+        return new Select().from(Quote.class).orderBy("Name ASC").execute();
     }
 }

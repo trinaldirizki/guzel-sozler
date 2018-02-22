@@ -55,9 +55,6 @@ public class HomeRecyclerFragment extends BaseRecyclerFragment {
 
     @Override
     protected void setRecyclerViewData() {
-        mQuoteList = new ArrayList<>();
-        mQuoteArray = getResources().getStringArray(R.array.ask_sozleri);
-        for (String s : mQuoteArray)
-            mQuoteList.add(new Quote(s, getActivity().getResources().getString(R.string.title_category), false));
+        mQuoteList = Quote.getAll();
     }
 }
