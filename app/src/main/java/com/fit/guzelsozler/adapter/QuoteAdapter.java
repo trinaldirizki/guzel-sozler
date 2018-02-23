@@ -80,6 +80,8 @@ public class QuoteAdapter extends RecyclerView.Adapter<QuoteAdapter.QuoteHolder>
                     holder.buttonAddToFavorites.setTag("no_favorite_quote");
                     holder.buttonAddToFavorites.setBackgroundResource(R.drawable.ic_action_add_to_favorites);
                 }
+
+                refreshFavorites(view);
             }
         });
         holder.buttonCopy.setOnClickListener(new View.OnClickListener() {
@@ -119,5 +121,13 @@ public class QuoteAdapter extends RecyclerView.Adapter<QuoteAdapter.QuoteHolder>
     @Override
     public int getItemCount() {
         return quoteList.size();
+    }
+
+    public void refreshFavorites(View view){
+        FragmentManager manager = ((Activity) view.getContext()).getFragmentManager();
+        FavoriteRecyclerFragment fragment = (FavoriteRecyclerFragment) manager.findFragmentByTag(FavoriteRecyclerFragment.class.getSimpleName());
+        if (fragment != null) {
+            FragmentUtil.refresh(manager,R.id.fragment_base,fragment);
+        }
     }
 }

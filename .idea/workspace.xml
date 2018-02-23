@@ -13,9 +13,6 @@
     <list default="true" id="d32fa486-bae5-4f52-94d1-ad9f471e9d78" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/fit/guzelsozler/adapter/QuoteAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/fit/guzelsozler/adapter/QuoteAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/fit/guzelsozler/fragment/FavoriteRecyclerFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/fit/guzelsozler/fragment/FavoriteRecyclerFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/fit/guzelsozler/fragment/HomeRecyclerFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/fit/guzelsozler/fragment/HomeRecyclerFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/fit/guzelsozler/util/FragmentUtil.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/fit/guzelsozler/util/FragmentUtil.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -73,7 +70,7 @@
       <file leaf-file-name="FavoriteRecyclerFragment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fit/guzelsozler/fragment/FavoriteRecyclerFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
+            <state relative-caret-position="504">
               <caret line="42" column="32" lean-forward="false" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
               <folding>
                 <element signature="e#881#882#0" expanded="true" />
@@ -83,28 +80,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QuoteAdapter.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="QuoteAdapter.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fit/guzelsozler/adapter/QuoteAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="42" column="39" lean-forward="true" selection-start-line="42" selection-start-column="39" selection-end-line="42" selection-end-column="39" />
+            <state relative-caret-position="758">
+              <caret line="130" column="9" lean-forward="false" selection-start-line="130" selection-start-column="9" selection-end-line="130" selection-end-column="9" />
               <folding>
                 <element signature="e#1749#1750#0" expanded="true" />
                 <element signature="e#1791#1792#0" expanded="true" />
-                <element signature="e#2358#3348#0" expanded="true" />
+                <element signature="e#2358#3389#0" expanded="true" />
                 <element signature="e#2696#2729#0" expanded="true" />
-                <element signature="e#3347#3348#0" expanded="true" />
-                <element signature="e#3396#3948#0" expanded="true" />
-                <element signature="e#3947#3948#0" expanded="true" />
+                <element signature="e#3388#3389#0" expanded="true" />
+                <element signature="e#3437#3989#0" expanded="true" />
+                <element signature="e#3988#3989#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FragmentUtil.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FragmentUtil.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fit/guzelsozler/util/FragmentUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
+            <state relative-caret-position="324">
               <caret line="22" column="5" lean-forward="false" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
               <folding />
             </state>
@@ -1920,9 +1917,9 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/fit/guzelsozler/model/Quote.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/fit/guzelsozler/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/fit/guzelsozler/util/FragmentUtil.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/fit/guzelsozler/adapter/QuoteAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/fit/guzelsozler/fragment/FavoriteRecyclerFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/fit/guzelsozler/fragment/HomeRecyclerFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/fit/guzelsozler/adapter/QuoteAdapter.java" />
       </list>
     </option>
   </component>
@@ -2248,7 +2245,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1519380583958" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1519381040569" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -2296,7 +2293,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1519380583958" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1519381040569" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2458,7 +2455,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1519380583960" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1519381040570" />
       </method>
     </configuration>
     <list size="1">
@@ -2707,7 +2704,14 @@
       <option name="project" value="LOCAL" />
       <updated>1519378887130</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Fixed bugs on QuoteAdapter class.">
+      <created>1519380621140</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1519380621140</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2751,7 +2755,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added fixes and improvements." />
     <MESSAGE value="Added RecyclerFragments." />
     <MESSAGE value="Added credits to Options Menu." />
     <MESSAGE value="Added CreditsFragment." />
@@ -2776,7 +2779,8 @@
     <MESSAGE value="Made changes on resources values." />
     <MESSAGE value="Fixed displaying quotes on Favorites fragment." />
     <MESSAGE value="Displayed home screen on startup." />
-    <option name="LAST_COMMIT_MESSAGE" value="Displayed home screen on startup." />
+    <MESSAGE value="Fixed bugs on QuoteAdapter class." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed bugs on QuoteAdapter class." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3141,33 +3145,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fit/guzelsozler/adapter/QuoteAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="42" column="39" lean-forward="true" selection-start-line="42" selection-start-column="39" selection-end-line="42" selection-end-column="39" />
-          <folding>
-            <element signature="e#1749#1750#0" expanded="true" />
-            <element signature="e#1791#1792#0" expanded="true" />
-            <element signature="e#2358#3348#0" expanded="true" />
-            <element signature="e#2696#2729#0" expanded="true" />
-            <element signature="e#3347#3348#0" expanded="true" />
-            <element signature="e#3396#3948#0" expanded="true" />
-            <element signature="e#3947#3948#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fit/guzelsozler/fragment/FavoriteRecyclerFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="42" column="32" lean-forward="false" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
-          <folding>
-            <element signature="e#881#882#0" expanded="true" />
-            <element signature="e#932#933#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fit/guzelsozler/fragment/CategoryRecyclerFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="421">
@@ -3191,9 +3168,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fit/guzelsozler/util/FragmentUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
+        <state relative-caret-position="324">
           <caret line="22" column="5" lean-forward="false" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fit/guzelsozler/fragment/FavoriteRecyclerFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="42" column="32" lean-forward="false" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
+          <folding>
+            <element signature="e#881#882#0" expanded="true" />
+            <element signature="e#932#933#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fit/guzelsozler/adapter/QuoteAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="758">
+          <caret line="130" column="9" lean-forward="false" selection-start-line="130" selection-start-column="9" selection-end-line="130" selection-end-column="9" />
+          <folding>
+            <element signature="e#1749#1750#0" expanded="true" />
+            <element signature="e#1791#1792#0" expanded="true" />
+            <element signature="e#2358#3389#0" expanded="true" />
+            <element signature="e#2696#2729#0" expanded="true" />
+            <element signature="e#3388#3389#0" expanded="true" />
+            <element signature="e#3437#3989#0" expanded="true" />
+            <element signature="e#3988#3989#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
