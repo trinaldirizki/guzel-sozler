@@ -70,4 +70,7 @@ public class Quote extends Model {
         return new Select().from(Quote.class).limit(50).orderBy("RANDOM()").execute();
     }
 
+    public static List<Quote> getSingleCategory(String category) {
+        return new Select().from(Quote.class).where("Category = ?", category).orderBy("Name ASC").execute();
+    }
 }

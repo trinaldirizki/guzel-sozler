@@ -1,5 +1,6 @@
 package com.fit.guzelsozler.adapter;
 
+import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,7 +9,9 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.fit.guzelsozler.R;
+import com.fit.guzelsozler.fragment.QuoteRecyclerFragment;
 import com.fit.guzelsozler.model.Category;
+import com.fit.guzelsozler.util.FragmentUtil;
 
 import java.util.List;
 
@@ -47,7 +50,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
         holder.buttonCategory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(), "Share", Toast.LENGTH_SHORT).show();
+                FragmentUtil.open(((Activity) view.getContext()).getFragmentManager(), R.id.fragment_base, new QuoteRecyclerFragment());
             }
         });
     }

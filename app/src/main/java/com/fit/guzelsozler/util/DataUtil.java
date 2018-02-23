@@ -47,4 +47,8 @@ public class DataUtil {
         }
     }
 
+    public static void set(){
+
+    }
+
 }

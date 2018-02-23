@@ -22,7 +22,8 @@ public class FragmentUtil {
         transaction.commit();
     }
 
-    public static void refresh(FragmentManager fragmentManager, int layoutId, BaseFragment fragment) {
+    public static void refresh(FragmentManager fragmentManager, BaseFragment fragment) {
         fragmentManager.beginTransaction().detach(fragment).attach(fragment).commit();
     }
+
 }

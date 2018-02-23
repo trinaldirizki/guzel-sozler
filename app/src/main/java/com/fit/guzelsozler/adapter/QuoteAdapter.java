@@ -126,7 +126,7 @@ public class QuoteAdapter extends RecyclerView.Adapter<QuoteAdapter.QuoteHolder>
         FragmentManager manager = ((Activity) view.getContext()).getFragmentManager();
         FavoriteRecyclerFragment fragment = (FavoriteRecyclerFragment) manager.findFragmentByTag(FavoriteRecyclerFragment.class.getSimpleName());
         if (fragment != null) {
-            FragmentUtil.refresh(manager, R.id.fragment_base, fragment);
+            FragmentUtil.refresh(manager, fragment);
         }
     }
 }
