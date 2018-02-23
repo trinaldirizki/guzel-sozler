@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         checkDatabase();
-//        initiliazeApp();
+        FragmentUtil.open(getFragmentManager(), R.id.fragment_base, new HomeRecyclerFragment());
     }
 
     public void checkDatabase(){
@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         File dbQuote = getApplicationContext().getDatabasePath("quote.db");
         if (dbQuote.exists()) {
             Log.i("Database", "Database exists, " + dbQuote.getTotalSpace());
-            // use this only for deleting database if needed
+//            use this only for deleting database if needed
 //            deleteDatabase("quote.db");
 //            initiliazeApp();
         } else {
@@ -91,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+//    use this only for initializing the database
     public void initiliazeApp() {
         ActiveAndroid.beginTransaction();
         try {
