@@ -52,9 +52,11 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.menu_credits:
-                getSupportActionBar().setSubtitle(R.string.title_credits);
-                FragmentUtil.replace(getFragmentManager(), R.id.fragment_base, new CreditsFragment());
-                return true;
+                if (getSupportActionBar() != null) {
+                    getSupportActionBar().setSubtitle(R.string.title_credits);
+                    FragmentUtil.replace(getFragmentManager(), R.id.fragment_base, new CreditsFragment());
+                    return true;
+                }
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -65,24 +67,22 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
             clearView();
-            switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    getSupportActionBar().setSubtitle(R.string.title_home);
-                    FragmentUtil.replace(getFragmentManager(), R.id.fragment_base, new HomeRecyclerFragment());
-                    return true;
-                case R.id.navigation_category:
-                    getSupportActionBar().setSubtitle(R.string.title_category);
-                    /*FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                    transaction.replace(R.id.fragment_base, new CategoryListFragment(),"visible_fragment");
-                    transaction.commit();*/
-                    FragmentUtil.replace(getFragmentManager(), R.id.fragment_base, new CategoryRecyclerFragment());
-                    return true;
-                case R.id.navigation_favorite:
-                    getSupportActionBar().setSubtitle(R.string.title_favorite);
-                    FragmentUtil.replace(getFragmentManager(), R.id.fragment_base, new FavoriteRecyclerFragment());
-                    return true;
+            if (getSupportActionBar() != null) {
+                switch (item.getItemId()) {
+                    case R.id.navigation_home:
+                        getSupportActionBar().setSubtitle(R.string.title_home);
+                        FragmentUtil.replace(getFragmentManager(), R.id.fragment_base, new HomeRecyclerFragment());
+                        return true;
+                    case R.id.navigation_category:
+                        getSupportActionBar().setSubtitle(R.string.title_category);
+                        FragmentUtil.replace(getFragmentManager(), R.id.fragment_base, new CategoryRecyclerFragment());
+                        return true;
+                    case R.id.navigation_favorite:
+                        getSupportActionBar().setSubtitle(R.string.title_favorite);
+                        FragmentUtil.replace(getFragmentManager(), R.id.fragment_base, new FavoriteRecyclerFragment());
+                        return true;
+                }
             }
             return false;
         }
@@ -104,7 +104,6 @@ public class MainActivity extends AppCompatActivity {
         DataUtil.checkDatabase(this);
         FragmentUtil.open(getFragmentManager(), R.id.fragment_base, new HomeRecyclerFragment());
     }
-
 
     public void clearView() {
         layout.removeAllViews();

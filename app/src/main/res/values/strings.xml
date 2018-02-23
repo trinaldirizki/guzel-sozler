@@ -11,8 +11,9 @@
     <string name="title_added_to_favorites">Favorilerim\'e eklendi</string>
     <string name="credits_title">Güzel Sözler v1.0</string>
     <string name="credits_detail">Icon made by Freepik from www.flaticon.com</string>
-    <string name="credits_bottom">All rights reserved</string>
+    <string name="credits_bottom">© 2018 FIT. All rights reserved</string>
     <string name="title_removed_from_favorites">Favorilerim\'den çıkarıldı</string>
+    <string name="application_logo">Application Logo</string>
     <string-array name="array_category">
         <item>Aşk Sözleri</item>
         <item>Anlamlı Sözler</item>

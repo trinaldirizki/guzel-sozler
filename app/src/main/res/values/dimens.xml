@@ -10,4 +10,5 @@
     <dimen name="margin_top">5dp</dimen>
     <dimen name="margin_bottom">50dp</dimen>
     <dimen name="margin_horizontal">10dp</dimen>
+    <dimen name="logo_size">100dp</dimen>
 </resources>
