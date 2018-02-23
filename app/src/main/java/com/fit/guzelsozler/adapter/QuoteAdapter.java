@@ -89,8 +89,9 @@ public class QuoteAdapter extends RecyclerView.Adapter<QuoteAdapter.QuoteHolder>
             public void onClick(View view) {
                 ClipboardManager clipboardManager = (ClipboardManager) view.getContext().getSystemService(Context.CLIPBOARD_SERVICE);
                 ClipData clipData = ClipData.newPlainText(COPIED_QUOTE, quote.getName());
-                assert clipboardManager != null;
-                clipboardManager.setPrimaryClip(clipData);
+                if (clipboardManager != null) {
+                    clipboardManager.setPrimaryClip(clipData);
+                }
                 Toast.makeText(view.getContext(), R.string.title_copied, Toast.LENGTH_SHORT).show();
             }
         });

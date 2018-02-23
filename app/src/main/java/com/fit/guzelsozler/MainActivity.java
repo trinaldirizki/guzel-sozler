@@ -1,6 +1,7 @@
 package com.fit.guzelsozler;
 
 import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.provider.ContactsContract;
@@ -18,11 +19,14 @@ import com.activeandroid.Configuration;
 import com.activeandroid.Configuration.Builder;
 import com.facebook.stetho.Stetho;
 import com.fit.guzelsozler.fragment.CategoryFragment;
+import com.fit.guzelsozler.fragment.CategoryListFragment;
 import com.fit.guzelsozler.fragment.CategoryRecyclerFragment;
+import com.fit.guzelsozler.fragment.CreditsFragment;
 import com.fit.guzelsozler.fragment.FavoriteFragment;
 import com.fit.guzelsozler.fragment.FavoriteRecyclerFragment;
 import com.fit.guzelsozler.fragment.HomeFragment;
 import com.fit.guzelsozler.fragment.HomeRecyclerFragment;
+import com.fit.guzelsozler.fragment.QuoteRecyclerFragment;
 import com.fit.guzelsozler.model.Quote;
 import com.fit.guzelsozler.util.DataUtil;
 import com.fit.guzelsozler.util.DictionaryUtil;
@@ -35,6 +39,8 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    private LinearLayout layout;
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_options, menu);
@@ -42,25 +48,40 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_credits:
+                getSupportActionBar().setSubtitle(R.string.title_credits);
+                FragmentUtil.replace(getFragmentManager(), R.id.fragment_base, new CreditsFragment());
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            LinearLayout layout = (LinearLayout) findViewById(R.id.fragment_base);
-            layout.removeAllViews();
+
+            clearView();
             switch (item.getItemId()) {
                 case R.id.navigation_home:
                     getSupportActionBar().setSubtitle(R.string.title_home);
-                    FragmentUtil.open(getFragmentManager(), R.id.fragment_base, new HomeRecyclerFragment());
+                    FragmentUtil.replace(getFragmentManager(), R.id.fragment_base, new HomeRecyclerFragment());
                     return true;
                 case R.id.navigation_category:
                     getSupportActionBar().setSubtitle(R.string.title_category);
-                    FragmentUtil.open(getFragmentManager(), R.id.fragment_base, new CategoryRecyclerFragment());
+                    /*FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                    transaction.replace(R.id.fragment_base, new CategoryListFragment(),"visible_fragment");
+                    transaction.commit();*/
+                    FragmentUtil.replace(getFragmentManager(), R.id.fragment_base, new CategoryRecyclerFragment());
                     return true;
                 case R.id.navigation_favorite:
                     getSupportActionBar().setSubtitle(R.string.title_favorite);
-                    FragmentUtil.open(getFragmentManager(), R.id.fragment_base, new FavoriteRecyclerFragment());
+                    FragmentUtil.replace(getFragmentManager(), R.id.fragment_base, new FavoriteRecyclerFragment());
                     return true;
             }
             return false;
@@ -72,7 +93,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Stetho.initializeWithDefaults(this);
         setContentView(R.layout.activity_main);
-        
+        layout = (LinearLayout) findViewById(R.id.fragment_base);
+
         if (getSupportActionBar() != null) {
             getSupportActionBar().setSubtitle(getString(R.string.title_home));
         }
@@ -84,4 +106,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public void clearView() {
+        layout.removeAllViews();
+    }
 }

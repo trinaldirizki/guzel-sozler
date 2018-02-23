@@ -46,9 +46,4 @@ public class DataUtil {
             ActiveAndroid.endTransaction();
         }
     }
-
-    public static void set(){
-
-    }
-
 }

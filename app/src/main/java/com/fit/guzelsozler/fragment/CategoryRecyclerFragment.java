@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ArrayAdapter;
 
+import com.fit.guzelsozler.MainActivity;
 import com.fit.guzelsozler.R;
 import com.fit.guzelsozler.adapter.CategoryAdapter;
 import com.fit.guzelsozler.model.Category;
@@ -42,7 +43,7 @@ public class CategoryRecyclerFragment extends BaseRecyclerFragment {
 
     @Override
     protected RecyclerView.Adapter getAdapter() {
-        return new CategoryAdapter(mListCategory);
+        return new CategoryAdapter(mListCategory, (MainActivity)getActivity());
     }
 
     @Override

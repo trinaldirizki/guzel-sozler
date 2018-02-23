@@ -1,5 +1,8 @@
 package com.fit.guzelsozler.model;
 
+import android.content.Intent;
+import android.util.Log;
+
 import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
@@ -71,6 +74,7 @@ public class Quote extends Model {
     }
 
     public static List<Quote> getSingleCategory(String category) {
+        Log.i("DbCategory", category);
         return new Select().from(Quote.class).where("Category = ?", category).orderBy("Name ASC").execute();
     }
 }

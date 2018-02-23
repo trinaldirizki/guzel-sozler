@@ -1,15 +1,20 @@
 package com.fit.guzelsozler.fragment;
 
+import android.content.Intent;
+import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.fit.guzelsozler.R;
 import com.fit.guzelsozler.adapter.QuoteAdapter;
+import com.fit.guzelsozler.model.Category;
 import com.fit.guzelsozler.model.Quote;
 import com.fit.guzelsozler.util.DataUtil;
 import com.fit.guzelsozler.util.FragmentUtil;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,6 +24,7 @@ import java.util.List;
 public class QuoteRecyclerFragment extends BaseRecyclerFragment {
 
     List<Quote> mListQuote;
+    static String categoryName;
 
     @Override
     protected void setListViewComponents(View view) {
@@ -27,7 +33,7 @@ public class QuoteRecyclerFragment extends BaseRecyclerFragment {
 
     @Override
     protected int getRecyclerId() {
-        return R.id.fragment_base;
+        return R.id.recycler_quote;
     }
 
     @Override
@@ -37,16 +43,25 @@ public class QuoteRecyclerFragment extends BaseRecyclerFragment {
 
     @Override
     protected void setRecyclerViewData() {
-        mListQuote = Quote.getSingleCategory();
+        /*mListQuote = new ArrayList<>();
+        String[] mArrayQuote = getResources().getStringArray(R.array.array_category);
+        for (String s : mArrayQuote)
+            mListQuote.add(new Quote(s, "Kategori", false));*/
+
+         mListQuote = Quote.getSingleCategory(categoryName);
     }
 
     @Override
     protected int getLayoutId() {
-        return 0;
+        return R.layout.fragment_quote;
     }
 
     @Override
     public String getFragmentTag() {
-        return null;
+        return QuoteRecyclerFragment.class.getSimpleName();
+    }
+
+    public static void getCategoryName(String c){
+        categoryName = c;
     }
 }
