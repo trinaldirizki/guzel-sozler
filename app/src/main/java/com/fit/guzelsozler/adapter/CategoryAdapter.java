@@ -16,7 +16,7 @@ import java.util.List;
  * Created by trinaldi on 2/18/18.
  */
 
-public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryHolder>{
+public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryHolder> {
 
     private List<Category> mListCategory;
 
@@ -36,7 +36,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
 
     @Override
     public CategoryHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.category_button, parent,false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.category_button, parent, false);
         return new CategoryHolder(itemView);
     }
 
@@ -56,7 +56,6 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
     public int getItemCount() {
         return mListCategory.size();
     }
-
 
 
 }

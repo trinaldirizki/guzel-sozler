@@ -32,15 +32,15 @@ import java.util.List;
 
 public class QuoteAdapter extends RecyclerView.Adapter<QuoteAdapter.QuoteHolder> {
 
-    List<Quote> quoteList;
+    private List<Quote> quoteList;
     private static final String COPIED_QUOTE = "CopiedQuote";
 
 
-    public class QuoteHolder extends RecyclerView.ViewHolder {
-        public TextView textQuote, textCategory;
-        public ImageButton buttonCopy, buttonAddToFavorites, buttonShare;
+    class QuoteHolder extends RecyclerView.ViewHolder {
+        TextView textQuote, textCategory;
+        ImageButton buttonCopy, buttonAddToFavorites, buttonShare;
 
-        public QuoteHolder(View view) {
+        QuoteHolder(View view) {
             super(view);
             textQuote = view.findViewById(R.id.text_quote);
             textCategory = view.findViewById(R.id.text_category);
@@ -111,10 +111,9 @@ public class QuoteAdapter extends RecyclerView.Adapter<QuoteAdapter.QuoteHolder>
             holder.buttonAddToFavorites.setBackgroundResource(R.drawable.ic_action_add_to_favorites);
             holder.buttonAddToFavorites.setTag("no_favorite_quote");
         }
-
     }
 
-    public boolean checkFavoriteItem(Quote quote) {
+    private boolean checkFavoriteItem(Quote quote) {
         return quote.isFavorite();
     }
 
@@ -123,11 +122,11 @@ public class QuoteAdapter extends RecyclerView.Adapter<QuoteAdapter.QuoteHolder>
         return quoteList.size();
     }
 
-    public void refreshFavorites(View view){
+    private void refreshFavorites(View view) {
         FragmentManager manager = ((Activity) view.getContext()).getFragmentManager();
         FavoriteRecyclerFragment fragment = (FavoriteRecyclerFragment) manager.findFragmentByTag(FavoriteRecyclerFragment.class.getSimpleName());
         if (fragment != null) {
-            FragmentUtil.refresh(manager,R.id.fragment_base,fragment);
+            FragmentUtil.refresh(manager, R.id.fragment_base, fragment);
         }
     }
 }

@@ -16,14 +16,14 @@ import java.util.List;
  */
 
 public class SharedPreferenceUtil {
-    public static final String PREFS_NAME = "GuzelSozlerApp";
-    public static final String FAVORITES = "FavoriteQuote";
+    private static final String PREFS_NAME = "GuzelSozlerApp";
+    private static final String FAVORITES = "FavoriteQuote";
 
     public SharedPreferenceUtil() {
         super();
     }
 
-    public void saveFavorites(Context context, List<Quote> favorites) {
+    private void saveFavorites(Context context, List<Quote> favorites) {
         SharedPreferences preferences;
         SharedPreferences.Editor editor;
 
@@ -33,12 +33,12 @@ public class SharedPreferenceUtil {
         Gson gson = new Gson();
         String jsonFavorites = gson.toJson(favorites);
         editor.putString(FAVORITES, jsonFavorites);
-        editor.putString("TEST",  favorites.toString());
+        editor.putString("TEST", favorites.toString());
         Log.i("Tag", jsonFavorites);
         editor.commit();
     }
 
-    public ArrayList<Quote> getFavorites(Context context) {
+    private ArrayList<Quote> getFavorites(Context context) {
         SharedPreferences preferences;
         List<Quote> favorites;
 

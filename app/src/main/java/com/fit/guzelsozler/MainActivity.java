@@ -3,6 +3,7 @@ package com.fit.guzelsozler;
 import android.app.Fragment;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
@@ -23,6 +24,7 @@ import com.fit.guzelsozler.fragment.FavoriteRecyclerFragment;
 import com.fit.guzelsozler.fragment.HomeFragment;
 import com.fit.guzelsozler.fragment.HomeRecyclerFragment;
 import com.fit.guzelsozler.model.Quote;
+import com.fit.guzelsozler.util.DataUtil;
 import com.fit.guzelsozler.util.DictionaryUtil;
 import com.fit.guzelsozler.util.FragmentUtil;
 import com.fit.guzelsozler.util.SharedPreferenceUtil;
@@ -73,42 +75,9 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setSubtitle(getString(R.string.title_home));
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        checkDatabase();
+        DataUtil.checkDatabase(this);
         FragmentUtil.open(getFragmentManager(), R.id.fragment_base, new HomeRecyclerFragment());
     }
 
-    public void checkDatabase(){
-//        deleteDatabase("quote.db");
-        File dbQuote = getApplicationContext().getDatabasePath("quote.db");
-        if (dbQuote.exists()) {
-            Log.i("Database", "Database exists, " + dbQuote.getTotalSpace());
-//            use this only for deleting database if needed
-//            deleteDatabase("quote.db");
-//            initiliazeApp();
-        } else {
-            Log.i("Database", "Database initialized");
-//            initiliazeApp();
-        }
-    }
-
-//    use this only for initializing the database
-    public void initiliazeApp() {
-        ActiveAndroid.beginTransaction();
-        try {
-            DictionaryUtil dictionaryUtil = new DictionaryUtil(this);
-            dictionaryUtil.initDictionary();
-            String[] categories = getResources().getStringArray(R.array.array_category);
-            for (String s : categories) {
-                String[] items = getResources().getStringArray((int) dictionaryUtil.getValue(s));
-                for (String item : items) {
-                    Quote quote = new Quote(item, s, false);
-                    quote.save();
-                }
-            }
-            ActiveAndroid.setTransactionSuccessful();
-        } finally {
-            ActiveAndroid.endTransaction();
-        }
-    }
 
 }

@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 public abstract class BaseFragment extends Fragment {
 
     private View view;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -29,6 +30,8 @@ public abstract class BaseFragment extends Fragment {
     }
 
     protected abstract int getLayoutId();
+
     protected abstract void setViewComponents(View view);
+
     public abstract String getFragmentTag();
 }

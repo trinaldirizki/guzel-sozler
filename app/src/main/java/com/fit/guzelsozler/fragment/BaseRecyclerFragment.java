@@ -13,10 +13,6 @@ public abstract class BaseRecyclerFragment extends BaseFragment {
 
     RecyclerView recyclerView;
 
-    public BaseRecyclerFragment() {
-//        setRecyclerViewData();
-    }
-
     @Override
     protected void setViewComponents(View view) {
         recyclerView = view.findViewById(getRecyclerId());

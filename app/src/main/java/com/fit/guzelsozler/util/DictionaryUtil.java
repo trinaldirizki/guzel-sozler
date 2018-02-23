@@ -24,7 +24,7 @@ public class DictionaryUtil {
         this.context = context;
     }
 
-    public void initDictionary(){
+    public void initDictionary() {
         dictionary = new Hashtable();
         String[] categories = context.getResources().getStringArray(R.array.array_category);
         dictionary.put(categories[0], R.array.ask_sozleri);
@@ -136,7 +136,7 @@ public class DictionaryUtil {
 
     }
 
-    public Object getValue(String s){
+    public Object getValue(String s) {
         return dictionary.get(s);
     }
 }
