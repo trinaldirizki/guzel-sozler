@@ -53,6 +53,6 @@ public class HomeRecyclerFragment extends BaseRecyclerFragment {
 
     @Override
     protected void setRecyclerViewData() {
-        mQuoteList = Quote.getAll();
+        mQuoteList = Quote.getRandom();
     }
 }

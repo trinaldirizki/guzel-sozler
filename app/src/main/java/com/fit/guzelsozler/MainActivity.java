@@ -19,6 +19,7 @@ import com.facebook.stetho.Stetho;
 import com.fit.guzelsozler.fragment.CategoryFragment;
 import com.fit.guzelsozler.fragment.CategoryRecyclerFragment;
 import com.fit.guzelsozler.fragment.FavoriteFragment;
+import com.fit.guzelsozler.fragment.FavoriteRecyclerFragment;
 import com.fit.guzelsozler.fragment.HomeFragment;
 import com.fit.guzelsozler.fragment.HomeRecyclerFragment;
 import com.fit.guzelsozler.model.Quote;
@@ -56,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 case R.id.navigation_favorite:
                     getSupportActionBar().setSubtitle(R.string.title_favorite);
-                    FragmentUtil.open(getFragmentManager(), R.id.fragment_base, new FavoriteFragment());
+                    FragmentUtil.open(getFragmentManager(), R.id.fragment_base, new FavoriteRecyclerFragment());
                     return true;
             }
             return false;
@@ -99,10 +100,7 @@ public class MainActivity extends AppCompatActivity {
             for (String s : categories) {
                 String[] items = getResources().getStringArray((int) dictionaryUtil.getValue(s));
                 for (String item : items) {
-                    Quote quote = new Quote();
-                    quote.setCategory(s);
-                    quote.setName(item);
-                    quote.setFavorite(false);
+                    Quote quote = new Quote(item, s, false);
                     quote.save();
                 }
             }

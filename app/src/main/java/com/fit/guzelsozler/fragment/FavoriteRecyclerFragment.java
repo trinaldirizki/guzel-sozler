@@ -17,7 +17,6 @@ import java.util.List;
 public class FavoriteRecyclerFragment extends BaseRecyclerFragment {
 
     List<Quote> mQuoteList;
-    String[] mQuoteArray;
 
     @Override
     protected int getLayoutId() {
@@ -46,9 +45,6 @@ public class FavoriteRecyclerFragment extends BaseRecyclerFragment {
 
     @Override
     protected void setRecyclerViewData() {
-        mQuoteList = new ArrayList<>();
-        mQuoteArray = getResources().getStringArray(R.array.ask_sozleri);
-        for (String s : mQuoteArray)
-            mQuoteList.add(new Quote(s, "Kategori", false));
+        mQuoteList = Quote.getFavorites();
     }
 }

@@ -26,6 +26,7 @@ public class Quote extends Model {
 
     public void setFavorite(boolean favorite) {
         this.favorite = favorite;
+        this.save();
     }
 
     public Quote() {
@@ -45,8 +46,8 @@ public class Quote extends Model {
 
     public void setCategory(String category) {
         this.category = category;
+        this.save();
     }
-
 
     public String getName() {
         return name;
@@ -54,14 +55,24 @@ public class Quote extends Model {
 
     public void setName(String name) {
         this.name = name;
+        this.save();
     }
-
 
     public static List<Quote> getAll(){
         return new Select().from(Quote.class).orderBy("Name ASC").execute();
     }
 
+    public static List<Quote> getFavorites(){
+        return new Select().from(Quote.class).where("Favorite = ?", true).orderBy("Name ASC").execute();
+    }
+
     public static List<Quote> getRandom(){
         return new Select().from(Quote.class).limit(50).orderBy("RANDOM()").execute();
     }
+
+    public static void updateQuote(Quote quote){
+        Quote q = quote;
+        q.save();
+    }
+
 }
