@@ -1,5 +1,6 @@
 package com.fit.guzelsozler.util;
 
+import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 
@@ -19,5 +20,9 @@ public class FragmentUtil {
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         transaction.add(layoutId, fragment, fragment.getFragmentTag());
         transaction.commit();
+    }
+
+    public static void refresh(FragmentManager fragmentManager, int layoutId, BaseFragment fragment){
+        fragmentManager.beginTransaction().detach(fragment).attach(fragment).commit();
     }
 }

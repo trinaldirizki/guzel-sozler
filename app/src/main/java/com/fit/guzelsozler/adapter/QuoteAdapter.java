@@ -1,6 +1,7 @@
 package com.fit.guzelsozler.adapter;
 
 import android.app.Activity;
+import android.app.FragmentManager;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
@@ -18,7 +19,9 @@ import android.widget.Toast;
 
 import com.fit.guzelsozler.MainActivity;
 import com.fit.guzelsozler.R;
+import com.fit.guzelsozler.fragment.FavoriteRecyclerFragment;
 import com.fit.guzelsozler.model.Quote;
+import com.fit.guzelsozler.util.FragmentUtil;
 import com.fit.guzelsozler.util.SharedPreferenceUtil;
 
 import java.util.List;
@@ -31,8 +34,6 @@ public class QuoteAdapter extends RecyclerView.Adapter<QuoteAdapter.QuoteHolder>
 
     List<Quote> quoteList;
     private static final String COPIED_QUOTE = "CopiedQuote";
-    private Context context;
-    // SharedPreferenceUtil sharedPreferenceUtil;
 
 
     public class QuoteHolder extends RecyclerView.ViewHolder {
@@ -49,14 +50,8 @@ public class QuoteAdapter extends RecyclerView.Adapter<QuoteAdapter.QuoteHolder>
         }
     }
 
-    public QuoteAdapter(Context context, List<Quote> quoteList) {
-        this.context = context;
+    public QuoteAdapter(List<Quote> quoteList) {
         this.quoteList = quoteList;
-        // sharedPreferenceUtil = new SharedPreferenceUtil();
-    }
-
-    public Quote getItem(int position) {
-        return quoteList.get(position);
     }
 
     @Override
@@ -66,7 +61,7 @@ public class QuoteAdapter extends RecyclerView.Adapter<QuoteAdapter.QuoteHolder>
     }
 
     @Override
-    public void onBindViewHolder(final QuoteHolder holder, int position) {
+    public void onBindViewHolder(final QuoteHolder holder, final int position) {
         final Quote quote = quoteList.get(position);
         holder.textQuote.setText(quote.getName());
         holder.textCategory.setText(quote.getCategory());
@@ -114,6 +109,7 @@ public class QuoteAdapter extends RecyclerView.Adapter<QuoteAdapter.QuoteHolder>
             holder.buttonAddToFavorites.setBackgroundResource(R.drawable.ic_action_add_to_favorites);
             holder.buttonAddToFavorites.setTag("no_favorite_quote");
         }
+
     }
 
     public boolean checkFavoriteItem(Quote quote) {

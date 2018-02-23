@@ -48,7 +48,7 @@ public class HomeRecyclerFragment extends BaseRecyclerFragment {
 
     @Override
     protected RecyclerView.Adapter getAdapter() {
-        return new QuoteAdapter(getActivity(), mQuoteList);
+        return new QuoteAdapter(mQuoteList);
     }
 
     @Override
