@@ -30,8 +30,6 @@ import java.util.List;
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryHolder> {
 
     private List<Category> mListCategory;
-    private Handler layoutHandler = new Handler();
-    private Runnable mRunnable;
     private MainActivity activity;
 
     public class CategoryHolder extends RecyclerView.ViewHolder {
@@ -63,7 +61,9 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
             @Override
             public void onClick(View view) {
                 activity.clearView();
-                Log.i("ButtonCategory", category.getName());
+                if (activity.getSupportActionBar() != null) {
+                    activity.getSupportActionBar().setSubtitle(category.getName());
+                }
                 QuoteRecyclerFragment.getCategoryName(category.getName());
                 FragmentUtil.replace(manager, R.id.fragment_base, new QuoteRecyclerFragment());
             }

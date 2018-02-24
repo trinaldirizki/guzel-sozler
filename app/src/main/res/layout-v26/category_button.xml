@@ -11,7 +11,7 @@
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/margin_top"
+        android:layout_marginBottom="@dimen/card_margin"
         android:layout_marginHorizontal="@dimen/card_margin"
         card_view:cardBackgroundColor="@color/cardview_light_background"
         card_view:cardCornerRadius="@dimen/cardview_default_radius"
@@ -19,7 +19,8 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/card_content_margin">
 
             <Button
                 android:id="@+id/button_category"
@@ -28,11 +29,9 @@
                 android:background="@android:color/white"
                 android:text="@string/title_category"
                 android:textAllCaps="false"
-                android:textColor="@android:color/tertiary_text_light"
-                android:textSize="@dimen/text_size"
-                android:textStyle="bold"/>
+                android:textSize="14sp" />
         </RelativeLayout>
     </android.support.v7.widget.CardView>
 
-
+    
 </LinearLayout>

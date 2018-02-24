@@ -1,5 +1,7 @@
 package com.fit.guzelsozler.fragment;
 
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -20,6 +22,16 @@ public class CategoryRecyclerFragment extends BaseRecyclerFragment {
 
     List<Category> mListCategory;
     String[] mArrayCategory;
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        AppCompatActivity activity = (AppCompatActivity) getActivity();
+        ActionBar actionBar = activity.getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setSubtitle(R.string.title_category);
+        }
+    }
 
     @Override
     protected int getLayoutId() {
@@ -43,7 +55,7 @@ public class CategoryRecyclerFragment extends BaseRecyclerFragment {
 
     @Override
     protected RecyclerView.Adapter getAdapter() {
-        return new CategoryAdapter(mListCategory, (MainActivity)getActivity());
+        return new CategoryAdapter(mListCategory, (MainActivity) getActivity());
     }
 
     @Override

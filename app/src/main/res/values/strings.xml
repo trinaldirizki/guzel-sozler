@@ -14,6 +14,7 @@
     <string name="credits_bottom">© 2018 FIT. All rights reserved</string>
     <string name="title_removed_from_favorites">Favorilerim\'den çıkarıldı</string>
     <string name="application_logo">Application Logo</string>
+    <string name="category_click_info">Kategoriye gitmek için basılı tut</string>
     <string-array name="array_category">
         <item>Aşk Sözleri</item>
         <item>Anlamlı Sözler</item>

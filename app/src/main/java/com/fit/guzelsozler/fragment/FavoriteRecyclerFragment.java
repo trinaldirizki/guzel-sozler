@@ -1,8 +1,11 @@
 package com.fit.guzelsozler.fragment;
 
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import com.fit.guzelsozler.MainActivity;
 import com.fit.guzelsozler.R;
 import com.fit.guzelsozler.adapter.QuoteAdapter;
 import com.fit.guzelsozler.model.Quote;
@@ -17,6 +20,16 @@ import java.util.List;
 public class FavoriteRecyclerFragment extends BaseRecyclerFragment {
 
     List<Quote> mQuoteList;
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        AppCompatActivity activity = (AppCompatActivity) getActivity();
+        ActionBar actionBar = activity.getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setSubtitle(R.string.title_favorite);
+        }
+    }
 
     @Override
     protected int getLayoutId() {
@@ -40,7 +53,7 @@ public class FavoriteRecyclerFragment extends BaseRecyclerFragment {
 
     @Override
     protected RecyclerView.Adapter getAdapter() {
-        return new QuoteAdapter(mQuoteList);
+        return new QuoteAdapter(mQuoteList, (MainActivity) getActivity());
     }
 
     @Override

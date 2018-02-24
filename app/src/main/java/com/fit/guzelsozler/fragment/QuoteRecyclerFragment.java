@@ -4,9 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.annotation.Nullable;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import com.fit.guzelsozler.MainActivity;
 import com.fit.guzelsozler.R;
 import com.fit.guzelsozler.adapter.QuoteAdapter;
 import com.fit.guzelsozler.model.Category;
@@ -38,17 +41,12 @@ public class QuoteRecyclerFragment extends BaseRecyclerFragment {
 
     @Override
     protected RecyclerView.Adapter getAdapter() {
-        return new QuoteAdapter(mListQuote);
+        return new QuoteAdapter(mListQuote, (MainActivity) getActivity());
     }
 
     @Override
     protected void setRecyclerViewData() {
-        /*mListQuote = new ArrayList<>();
-        String[] mArrayQuote = getResources().getStringArray(R.array.array_category);
-        for (String s : mArrayQuote)
-            mListQuote.add(new Quote(s, "Kategori", false));*/
-
-         mListQuote = Quote.getSingleCategory(categoryName);
+        mListQuote = Quote.getSingleCategory(categoryName);
     }
 
     @Override
@@ -61,7 +59,7 @@ public class QuoteRecyclerFragment extends BaseRecyclerFragment {
         return QuoteRecyclerFragment.class.getSimpleName();
     }
 
-    public static void getCategoryName(String c){
+    public static void getCategoryName(String c) {
         categoryName = c;
     }
 }

@@ -7,22 +7,20 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ShareActionProvider;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.fit.guzelsozler.MainActivity;
 import com.fit.guzelsozler.R;
 import com.fit.guzelsozler.fragment.FavoriteRecyclerFragment;
+import com.fit.guzelsozler.fragment.QuoteRecyclerFragment;
 import com.fit.guzelsozler.model.Quote;
 import com.fit.guzelsozler.util.FragmentUtil;
-import com.fit.guzelsozler.util.SharedPreferenceUtil;
 
 import java.util.List;
 
@@ -34,6 +32,7 @@ public class QuoteAdapter extends RecyclerView.Adapter<QuoteAdapter.QuoteHolder>
 
     private List<Quote> quoteList;
     private static final String COPIED_QUOTE = "CopiedQuote";
+    private MainActivity activity;
 
 
     class QuoteHolder extends RecyclerView.ViewHolder {
@@ -50,8 +49,9 @@ public class QuoteAdapter extends RecyclerView.Adapter<QuoteAdapter.QuoteHolder>
         }
     }
 
-    public QuoteAdapter(List<Quote> quoteList) {
+    public QuoteAdapter(List<Quote> quoteList, MainActivity activity) {
         this.quoteList = quoteList;
+        this.activity = activity;
     }
 
     @Override
@@ -63,8 +63,27 @@ public class QuoteAdapter extends RecyclerView.Adapter<QuoteAdapter.QuoteHolder>
     @Override
     public void onBindViewHolder(final QuoteHolder holder, final int position) {
         final Quote quote = quoteList.get(position);
+        final FragmentManager manager = ((Activity) holder.itemView.getContext()).getFragmentManager();
         holder.textQuote.setText(quote.getName());
         holder.textCategory.setText(quote.getCategory());
+        holder.textCategory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(view.getContext(), R.string.category_click_info, Toast.LENGTH_SHORT).show();
+            }
+        });
+        holder.textCategory.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                activity.clearView();
+                if (activity.getSupportActionBar() != null) {
+                    activity.getSupportActionBar().setSubtitle(quote.getCategory());
+                }
+                QuoteRecyclerFragment.getCategoryName(quote.getCategory());
+                FragmentUtil.replace(manager, R.id.fragment_base, new QuoteRecyclerFragment());
+                return true;
+            }
+        });
         holder.buttonAddToFavorites.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
