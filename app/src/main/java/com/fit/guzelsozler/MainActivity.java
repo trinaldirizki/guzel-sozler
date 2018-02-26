@@ -34,6 +34,8 @@ import com.fit.guzelsozler.util.DictionaryUtil;
 import com.fit.guzelsozler.util.FragmentUtil;
 import com.fit.guzelsozler.util.SharedPreferenceUtil;
 import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 
@@ -45,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
     private LinearLayout layout;
     private InterstitialAd mInterstitialAd;
+    private AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +59,10 @@ public class MainActivity extends AppCompatActivity {
         mInterstitialAd = new InterstitialAd(this);
         mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
         mInterstitialAd.loadAd(new AdRequest.Builder().build());
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         layout = (LinearLayout) findViewById(R.id.fragment_base);
 
@@ -101,23 +108,25 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.navigation_home:
                         getSupportActionBar().setSubtitle(R.string.title_home);
                         FragmentUtil.replace(getFragmentManager(), R.id.fragment_base, new HomeRecyclerFragment());
+                        showAd();
                         return true;
                     case R.id.navigation_category:
                         getSupportActionBar().setSubtitle(R.string.title_category);
                         FragmentUtil.replace(getFragmentManager(), R.id.fragment_base, new CategoryRecyclerFragment());
+                        showAd();
                         return true;
                     case R.id.navigation_favorite:
                         getSupportActionBar().setSubtitle(R.string.title_favorite);
                         FragmentUtil.replace(getFragmentManager(), R.id.fragment_base, new FavoriteRecyclerFragment());
+                        showAd();
                         return true;
                 }
-                showAd();
             }
             return false;
         }
     };
 
-    private void showAd(){
+    private void showAd() {
         if (mInterstitialAd.isLoaded()) {
             mInterstitialAd.show();
         } else {

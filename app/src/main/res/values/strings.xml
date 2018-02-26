@@ -16,7 +16,9 @@
     <string name="application_logo">Application Logo</string>
     <string name="admob_app_id">ca-app-pub-6370973385232359~9857016177</string>
     <string name="admob_ad_unit_id">ca-app-pub-6370973385232359/7713659449</string>
+    <string name="admob_banner_ad_unit_id">ca-app-pub-6370973385232359/7081737079</string>
     <string name="category_click_info">Kategoriye gitmek için basılı tut</string>
+    <string name="admob_banner_default">ca-app-pub-3940256099942544/6300978111</string>
     <string-array name="array_category">
         <item>Aşk Sözleri</item>
         <item>Anlamlı Sözler</item>
