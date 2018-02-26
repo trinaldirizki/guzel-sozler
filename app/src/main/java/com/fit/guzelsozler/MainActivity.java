@@ -33,6 +33,9 @@ import com.fit.guzelsozler.util.DataUtil;
 import com.fit.guzelsozler.util.DictionaryUtil;
 import com.fit.guzelsozler.util.FragmentUtil;
 import com.fit.guzelsozler.util.SharedPreferenceUtil;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -41,6 +44,30 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private LinearLayout layout;
+    private InterstitialAd mInterstitialAd;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Stetho.initializeWithDefaults(this);
+        setContentView(R.layout.activity_main);
+
+        MobileAds.initialize(this, getResources().getString(R.string.admob_app_id));
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+
+        layout = (LinearLayout) findViewById(R.id.fragment_base);
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setSubtitle(getString(R.string.title_home));
+        }
+
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        DataUtil.checkDatabase(this);
+        FragmentUtil.open(getFragmentManager(), R.id.fragment_base, new HomeRecyclerFragment());
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -84,26 +111,18 @@ public class MainActivity extends AppCompatActivity {
                         FragmentUtil.replace(getFragmentManager(), R.id.fragment_base, new FavoriteRecyclerFragment());
                         return true;
                 }
+                showAd();
             }
             return false;
         }
     };
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        Stetho.initializeWithDefaults(this);
-        setContentView(R.layout.activity_main);
-        layout = (LinearLayout) findViewById(R.id.fragment_base);
-
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setSubtitle(getString(R.string.title_home));
+    private void showAd(){
+        if (mInterstitialAd.isLoaded()) {
+            mInterstitialAd.show();
+        } else {
+            Log.d("TAG", "The interstitial wasn't loaded yet.");
         }
-
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        DataUtil.checkDatabase(this);
-        FragmentUtil.open(getFragmentManager(), R.id.fragment_base, new HomeRecyclerFragment());
     }
 
     public void clearView() {

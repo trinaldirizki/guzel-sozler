@@ -32,15 +32,6 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
     private List<Category> mListCategory;
     private MainActivity activity;
 
-    public class CategoryHolder extends RecyclerView.ViewHolder {
-        public Button buttonCategory;
-
-        public CategoryHolder(View itemView) {
-            super(itemView);
-            buttonCategory = itemView.findViewById(R.id.button_category);
-        }
-    }
-
     public CategoryAdapter(List<Category> mListCategory, MainActivity activity) {
         this.mListCategory = mListCategory;
         this.activity = activity;
@@ -61,9 +52,9 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
             @Override
             public void onClick(View view) {
                 activity.clearView();
-                if (activity.getSupportActionBar() != null) {
+                /*if (activity.getSupportActionBar() != null) {
                     activity.getSupportActionBar().setSubtitle(category.getName());
-                }
+                }*/
                 QuoteRecyclerFragment.getCategoryName(category.getName());
                 FragmentUtil.replace(manager, R.id.fragment_base, new QuoteRecyclerFragment());
             }
@@ -73,6 +64,15 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
     @Override
     public int getItemCount() {
         return mListCategory.size();
+    }
+
+    class CategoryHolder extends RecyclerView.ViewHolder {
+        Button buttonCategory;
+
+        CategoryHolder(View itemView) {
+            super(itemView);
+            buttonCategory = itemView.findViewById(R.id.button_category);
+        }
     }
 
 

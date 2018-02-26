@@ -76,9 +76,9 @@ public class QuoteAdapter extends RecyclerView.Adapter<QuoteAdapter.QuoteHolder>
             @Override
             public boolean onLongClick(View view) {
                 activity.clearView();
-                if (activity.getSupportActionBar() != null) {
+                /*if (activity.getSupportActionBar() != null) {
                     activity.getSupportActionBar().setSubtitle(quote.getCategory());
-                }
+                }*/
                 QuoteRecyclerFragment.getCategoryName(quote.getCategory());
                 FragmentUtil.replace(manager, R.id.fragment_base, new QuoteRecyclerFragment());
                 return true;

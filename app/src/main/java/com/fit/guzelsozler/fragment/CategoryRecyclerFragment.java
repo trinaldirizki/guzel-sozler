@@ -24,7 +24,7 @@ public class CategoryRecyclerFragment extends BaseRecyclerFragment {
     List<Category> mListCategory;
     String[] mArrayCategory;
 
-    @Override
+    /*@Override
     public void onResume() {
         super.onResume();
         AppCompatActivity activity = (AppCompatActivity) getActivity();
@@ -33,7 +33,7 @@ public class CategoryRecyclerFragment extends BaseRecyclerFragment {
             getFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
             actionBar.setSubtitle(R.string.title_category);
         }
-    }
+    }*/
 
     @Override
     protected int getLayoutId() {
