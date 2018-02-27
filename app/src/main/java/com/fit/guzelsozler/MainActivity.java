@@ -34,16 +34,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         MobileAds.initialize(this, getResources().getString(R.string.admob_app_id));
-        mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId(getResources().getString(R.string.admob_interstitial_id));
-        mInterstitialAd.loadAd(new AdRequest.Builder().build());
-
-        mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+        loadBannerAd();
+        loadInterstitialAd();
 
         layout = findViewById(R.id.fragment_base);
-
         if (getSupportActionBar() != null) {
             getSupportActionBar().setSubtitle(getString(R.string.title_home));
         }
@@ -86,17 +80,17 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.navigation_home:
                         getSupportActionBar().setSubtitle(R.string.title_home);
                         FragmentUtil.replace(getFragmentManager(), R.id.fragment_base, new HomeRecyclerFragment());
-                        showAd();
+                        showInterstitialAd();
                         return true;
                     case R.id.navigation_category:
                         getSupportActionBar().setSubtitle(R.string.title_category);
                         FragmentUtil.replace(getFragmentManager(), R.id.fragment_base, new CategoryRecyclerFragment());
-                        showAd();
+                        showInterstitialAd();
                         return true;
                     case R.id.navigation_favorite:
                         getSupportActionBar().setSubtitle(R.string.title_favorite);
                         FragmentUtil.replace(getFragmentManager(), R.id.fragment_base, new FavoriteRecyclerFragment());
-                        showAd();
+                        showInterstitialAd();
                         return true;
                 }
             }
@@ -104,12 +98,24 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
-    private void showAd() {
+    private void showInterstitialAd() {
         if (mInterstitialAd.isLoaded()) {
             mInterstitialAd.show();
         } else {
             Log.d("TAG", "The interstitial wasn't loaded yet.");
         }
+    }
+
+    private void loadInterstitialAd(){
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId(getResources().getString(R.string.admob_interstitial_id));
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+    }
+
+    private void loadBannerAd(){
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
     }
 
     public void clearView() {
