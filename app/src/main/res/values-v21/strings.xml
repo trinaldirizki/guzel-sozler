@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="category_click_info">Kategoriye gitmek için basılı tut</string>
+    <string name="admob_interstitial_default">ca-app-pub-3940256099942544/1033173712</string>
 </resources>
