@@ -15,7 +15,7 @@ import java.io.File;
 
 public class DataUtil {
     public static void checkDatabase(Context context) {
-//        deleteDatabase("quote.db");
+//        context.deleteDatabase("quote.db");
         File dbQuote = context.getDatabasePath("quote.db");
         if (dbQuote.exists()) {
             Log.i("Database", "Database exists, " + dbQuote.getTotalSpace());

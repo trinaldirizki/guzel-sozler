@@ -11,7 +11,7 @@
     <string name="title_added_to_favorites">Favorilerim\'e eklendi</string>
     <string name="credits_title">Güzel Sözler v1.0</string>
     <string name="credits_detail">Icon made by Freepik from www.flaticon.com</string>
-    <string name="credits_bottom">© 2018 FIT. All rights reserved</string>
+    <string name="credits_bottom">© 2018 Cookie. All rights reserved</string>
     <string name="title_removed_from_favorites">Favorilerim\'den çıkarıldı</string>
     <string name="application_logo">Application Logo</string>
     <string name="admob_app_id">ca-app-pub-8280979181770378~1600882514</string>
@@ -50,7 +50,7 @@
         <item>Harbi Sözler</item>
         <item>Harika Sözler</item>
         <item>Hasret Sözleri</item>
-        <item>isyan Sözleri</item>
+        <item>İsyan Sözleri</item>
         <item>İyi Geceler Sözleri</item>
         <item>Kapak Laflar</item>
         <item>Kapak Sözler</item>
@@ -59,7 +59,7 @@
         <item>Komik Sözler</item>
         <item>Nefret Sözleri</item>
         <item>Öğrenci Sözleri</item>
-        <item>öğrenci Lafları</item>
+        <item>Öğrenci Lafları</item>
         <item>Özel Sözler</item>
         <item>Özlem Sözleri</item>
         <item>Özlü Sözler</item>
@@ -77,7 +77,7 @@
         <item>Sevgiliye Sözler</item>
         <item>Sitem Sözleri</item>
         <item>Skype Sözleri</item>
-        <item>Sms Sözleri</item>
+        <item>SMS Sözleri</item>
         <item>Süper Sözler</item>
         <item>Tebrik Sözleri</item>
         <item>Teklif Sözleri</item>
@@ -116,7 +116,7 @@
         <item>Sevgililer Günü Sözleri</item>
         <item>Cumhuriyet Bayramı Sözleri</item>
         <item>10 Kasım Sözleri</item>
-        <item>öğretmenler Günü Sözleri</item>
+        <item>Öğretmenler Günü Sözleri</item>
         <item>Ulusal Egemenlik ve Çocuk Bayramı Sözleri</item>
         <item>İşçi Bayramı Sözleri</item>
         <item>Gençlik ve Spor Bayramı Sözleri</item>
@@ -9040,15 +9040,14 @@
 
     </string-array>
     <string-array name="asker_mektuplari">
-        <item>Asker Mektupları, Asker Mektubu:</item>
-        <item>-Hasan Etem’in Validesine Son Mektubu –</item>
-        <item>Valideciğim,</item>
-        <item>Dört asker doğurmakla müftehir şanlı Türk annesi,</item>
-        <item>Nasihat-amiz mektubunu Divrin Ovası (Niğde) gibi,güzel,yeşillik bir ovacığın ortasından geçen derenin
+        <item>-Hasan Etem’in Validesine Son Mektubu –
+            Valideciğim,
+            Dört asker doğurmakla müftehir şanlı Türk annesi,
+            Nasihat-amiz mektubunu Divrin Ovası (Niğde) gibi,güzel,yeşillik bir ovacığın ortasından geçen derenin
             kenarındaki armut ağacının sayesinde otururken aldım.Tabiatın
             yeşillikleri içinde mest olmuş ruhumu bir kat daha takviye etti.
-        </item>
-        <item>Okudum, okudukça büyük dersler aldım.Tekrar okudum.Söyle güzel ve mukaddes bir vazifenin içinde
+
+            Okudum, okudukça büyük dersler aldım.Tekrar okudum.Söyle güzel ve mukaddes bir vazifenin içinde
             bulunduğumdan sevindim.Gözlerimi açtım, uzaklara doğru baktım.Yeşil
             yeşil ekinlerin rüzgara mukavemet edemeyerek eğilmesi,bana,annemden gelen mektubu selamlıyor gibi
             geldi.Hepsi benden tarafa doğru eğilip kalkıyordu ve beni , annenden
@@ -9056,120 +9055,120 @@
             muhteşem cam ağaçları kendilerine mahsus bir seda ile beni tebsir
             ediyorlardı.Nazarlarımı sola çevirdim çağıl çağıl akan dere , bana validemden gelen mektuptan dolayı gülüyor
             , oynuyor , köpürüyordu …
-        </item>
-        <item>Başımı kaldırdım , gölgesinde istirahat ettiğim ağacın yapraklarına baktım.Hepsi benim sevincime iştirak
+
+            Başımı kaldırdım , gölgesinde istirahat ettiğim ağacın yapraklarına baktım.Hepsi benim sevincime iştirak
             ettiğini , yaptıkları rakslarla anlatmak istiyordu.Diğer bir
             dalına baktım , güzel bir bülbül , tatlı sedasıyla beni tebsir ediyor ve hissiyatıma iştirak ettiğini ince
             gagalarını açarak göstermek istiyordu.
-        </item>
-        <item>İşte bu geçen dakikalar anında , hizmet eri :</item>
-        <item>-Efendim , çayınız , buyurunuz , içiniz , dedi.</item>
-        <item>-Pekala dedim,aldım baktım , sütlü çay…</item>
-        <item>-Mustafa bu şutu nereden aldın ? dedim.</item>
-        <item>-Efendim , şu derenin kenarında yayıla yayıla giden sürü yok mu ?</item>
-        <item>-Evet dedim.Evet ne kadar güzel.</item>
-        <item>-İşte onun çobanından 10 paraya aldım.</item>
-        <item>Valideciğim , on paraya yüz dirhem süt , şu katılmamış.Koyundan şimdi şağılmış , aldım ve içtim.Fakat
+
+            İşte bu geçen dakikalar anında , hizmet eri :
+            -Efendim , çayınız , buyurunuz , içiniz , dedi.
+            -Pekala dedim,aldım baktım , sütlü çay…
+            -Mustafa bu şutu nereden aldın ? dedim.
+            -Efendim , şu derenin kenarında yayıla yayıla giden sürü yok mu ?
+            -Evet dedim.Evet ne kadar güzel.
+            -İşte onun çobanından 10 paraya aldım.
+            Valideciğim , on paraya yüz dirhem süt , şu katılmamış.Koyundan şimdi şağılmış , aldım ve içtim.Fakat
             yukarıdaki bülbül bağırıyordu : “Validen kaderine kuşsun , ne
             yapalım.O da erkek olsaydı , bu çiçeklerden koklayacak , bu sütten içecek , bu ekinlerin secdelerini görecek
             ve derenin aheste akışını tetkik edecek ve çıkardığı
             sesleri duyacak idi”
-        </item>
-        <item>Şevket merak etmesin o görür , belki de daha güzellerini görür.</item>
-        <item>Fakat , valideciğim , sen yine müteessir olma.Ben seni , evet seni mutlaka buralara getireceğim.Ve şu
+
+            Şevket merak etmesin o görür , belki de daha güzellerini görür.
+            Fakat , valideciğim , sen yine müteessir olma.Ben seni , evet seni mutlaka buralara getireceğim.Ve şu
             tabii manzarayı göstereceğim.Şevket , Hilmi (kardeşleri) de senin
             sayende görecekler.
-        </item>
-        <item>O güzel çayırın koyu yeşil bir tarafında , çamaşır yıkayan askerler saf saf dizilmişler.Gayet güzel sesli
+
+            O güzel çayırın koyu yeşil bir tarafında , çamaşır yıkayan askerler saf saf dizilmişler.Gayet güzel sesli
             biri ezan okuyordu.
-        </item>
-        <item>Ey Allah’im , bu ovada onun sesi ne kadar güzeldi.Bülbül bile sustu, ekinler bile hareketten kesildi ,dere
+
+            Ey Allah’im , bu ovada onun sesi ne kadar güzeldi.Bülbül bile sustu, ekinler bile hareketten kesildi ,dere
             bile sesini çıkarmıyordu.Ezan bitti.O dereden ben de bir
             abdest aldım.Cemaat ile namazı kıldık..O güzel yeşil çayırların üzerine diz çöktüm.Bütün dünyanın dağdağa ve
             debdebelerini unuttum.Ellerimi kaldırdım , gözümü yukarı
             diktim , azımı açtım ve dedim :
-        </item>
-        <item>-Ey Türklerin Ulu Allah’ı.Ey şu öten kuşun , şu gezen ve meleyen köyünün , şu secde eden yeşil ekin ve
+
+            -Ey Türklerin Ulu Allah’ı.Ey şu öten kuşun , şu gezen ve meleyen köyünün , şu secde eden yeşil ekin ve
             otların şu heybetli dağların Halıkı.Sen bütün bunları Türklere
             verdin.Yine Türklerde bırak.Çünkü böyle güzel yerler , Sen’i takdış eden ve Sen’i ulu tanıyan Türklere
             mahsustur.
-        </item>
-        <item>Ey benim Rabbim !</item>
-        <item>Şu kahraman askerlerin bütün dilekleri ; ism-i Celalını İngilizlere ve Fransızlara tanıtmaktır.Sen bu
+
+            Ey benim Rabbim !
+            Şu kahraman askerlerin bütün dilekleri ; ism-i Celalını İngilizlere ve Fransızlara tanıtmaktır.Sen bu
             şerefli dileği ihsan eyle ve huzurunda titreyerek , böyle güzel
             ve sakin bir yerde sana dua eden biz askerlerin sungulerini keskin , düşmanlarını zaten kahrettin ya , bütün
             bütün mahfeyle. ”Diyerek dua ettim ve kalktım.Artık benim
             kadar mes’ut , benim kadar meşrur bir kimse tasavvur edilemezdi.
-        </item>
-        <item>Oğlun Hasan Etem</item>
-        <item>Mektubu yazan , ihtiyat zabıt ( yedek subay ) namzedi Hasan Etem , İstanbul Hukuk Fakültesi son sınıfına
+
+            Oğlun Hasan Etem
+            Mektubu yazan , ihtiyat zabıt ( yedek subay ) namzedi Hasan Etem , İstanbul Hukuk Fakültesi son sınıfına
             devam ederken aynı zamanda Beyazıt Numune Mektebi’nde
             öğretmendi.Düşmanın Çanakkale’ye dayandığını işittiğinde gözünü kırpmadan binlerce akranı gibi cepheye
             koştu.Gönüllü yazıldı.
-        </item>
-        <item>Bu onun son mektubuydu.Bu mektubu yazdıktan iki gün sonra Maydos (Eceabat)’da şehit oldu…</item>
-        <item>– Kınalı Kuzu –</item>
-        <item>Yozgat’ın Sorgun kazasının Karayakup köyünden cepheye gelen Murat , bölükteki tıbbiye öğrencilerinden
+
+            Bu onun son mektubuydu.Bu mektubu yazdıktan iki gün sonra Maydos (Eceabat)’da şehit oldu…</item>
+        <item>– Kınalı Kuzu –
+            Yozgat’ın Sorgun kazasının Karayakup köyünden cepheye gelen Murat , bölükteki tıbbiye öğrencilerinden
             Şükrü’ye bir mektup yazdırır :
-        </item>
-        <item>“Anacığım kardeşlerimi askere gönderirken başına kına koyma…Zabıt efendi bana sordu cevap
+
+            “Anacığım kardeşlerimi askere gönderirken başına kına koyma…Zabıt efendi bana sordu cevap
             veremedim.Kardeşlerim de cevap veremeyip mahçup olmasınlar.”
-        </item>
-        <item>Bir müddet sonra Murat’ın anasından cevabı mektup yetişir :</item>
-        <item>“Ey oğlum , gözümün nuru Murat’im ! Zabıt efendiye selam şöyle…Biz kurbanlık koçları kınalar öyle kurban
+
+            Bir müddet sonra Murat’ın anasından cevabı mektup yetişir :
+            “Ey oğlum , gözümün nuru Murat’im ! Zabıt efendiye selam şöyle…Biz kurbanlık koçları kınalar öyle kurban
             ederiz.Sen dört kardeşin arasında kurbansın.Sen İsmail’sin
             (as).Sen orada şehit olacaksın inşallah.Kurbanlık koçlar nasıl kınalanırsa , ben de onun için senin saçını
             kınalayıp gönderdim.”
-        </item>
-        <item>Ve mektup Çanakkale’de Murat’a ulaştığında , Murat’ın kınalı başı çoktan Allah’ına kurban gitmiştir
+
+            Ve mektup Çanakkale’de Murat’a ulaştığında , Murat’ın kınalı başı çoktan Allah’ına kurban gitmiştir
             bile…
-        </item>
-        <item>Üsteğmen Zahid’in Vasiyeti</item>
-        <item>“Bu günlerde her zamankinden daha önemli muharebelere gireceğiz.Bilirsin , her muharebeye giren ölmez.
+
+            Üsteğmen Zahid’in Vasiyeti
+            “Bu günlerde her zamankinden daha önemli muharebelere gireceğiz.Bilirsin , her muharebeye giren ölmez.
             Fakat eğer ben ölürsem sakin gam yeme… Beni ve seni yaratan
             Allah bizi nasıl dünyada birbirimize nasip etti ise , benden şehitlik rütbesini esirgemediği taktirde ,
             elbette , ruhlarımızı da birbirine kavuşturur.Vatan yolunda
             şehit olursam bana ne mutlu.Ancak , sana bir vasiyetim var :
-        </item>
-        <item>Birincisi benim için kat’iyyen ağlama…</item>
-        <item>İkincisi, eşyamin listesi ilişikte.Bunları sat , ele geçecek paradan “mihr-i muaccel ” ve “mihr-i müeccel
+
+            Birincisi benim için kat’iyyen ağlama…
+            İkincisi, eşyamin listesi ilişikte.Bunları sat , ele geçecek paradan “mihr-i muaccel ” ve “mihr-i müeccel
             ” ini al , üst tarafı ile bana bir mevlüt okut.Eğer bunlar
             sana borcumu ödemezse hakkını helal et ve ilk gece aramızda geçen sözü unutma…”
-        </item>
-        <item>Ayrıca mektubun içinden kırmızı kordelaya bağlı bir de saç demeti çıkar.Saçın tazeliği bunun mini mini bir
+
+            Ayrıca mektubun içinden kırmızı kordelaya bağlı bir de saç demeti çıkar.Saçın tazeliği bunun mini mini bir
             yavrunun başından kesilmiş olduğunu göstermektedir.
-        </item>
-        <item>İşte o zaman herkes Zahid’in evli olduğunu ve Nadide isminde de bir yavrusunun varlığını öğrenir.Çünkü
+
+            İşte o zaman herkes Zahid’in evli olduğunu ve Nadide isminde de bir yavrusunun varlığını öğrenir.Çünkü
             Zahid Üsteğmen cepheye gelirken arkasında evlad u iyal
             düşüncesini de bırakmıştır.Ve savaş boyunca ne izin isteyerek evine gitmeyi düşünmüş ne de o konuda iki çift
             laf etmiştir.
-        </item>
-        <item>Zahid , 9 Ocak 1916’da şehit olur.</item>
-        <item>Gümüşhane’nin Sıran ilçesinden Üsteğmen Zahid , Aziziye ilçesinin Kılıç Mehmet Bey köyünden Ahmet
+
+            Zahid , 9 Ocak 1916’da şehit olur.
+            Gümüşhane’nin Sıran ilçesinden Üsteğmen Zahid , Aziziye ilçesinin Kılıç Mehmet Bey köyünden Ahmet
             Efendi’nin kızı , eşi Hanife Hanım’a yazdığı ve vasiyetini bildirdiği
             mektubunu şu cümle ile bitirir :
-        </item>
-        <item>“Bu vasiyetimi aldığınız zaman yüksek sesle ağlamanıza razı değilim.”</item>
-        <item>-Kolağası (On Yüzbaşı) Bölük Komutanı – Mehmet TEVFİK- 1881 İstanbul-</item>
-        <item>Sebebi hayatım, feyz-u refikim,</item>
-        <item>Sevgili babacığım,valideciğim,</item>
-        <item>Arıburnu’nda ilk girdiğim müthiş muharebede sağ yanımdan ve pantolonumdan kurşun geçti, hamdolsun
+
+            “Bu vasiyetimi aldığınız zaman yüksek sesle ağlamanıza razı değilim.”</item>
+        <item>-Kolağası (On Yüzbaşı) Bölük Komutanı – Mehmet TEVFİK- 1881 İstanbul-
+            Sebebi hayatım, feyz-u refikim,
+            Sevgili babacığım,valideciğim,
+            Arıburnu’nda ilk girdiğim müthiş muharebede sağ yanımdan ve pantolonumdan kurşun geçti, hamdolsun
             kurtuldum.Fakat bundan sonra gireceğim muharebelerden kurtulacağımdan
             ümidim olmadığından bir hatıra olmak üzere şu yazılarımı yazıyorum.
-        </item>
-        <item>Hamdu şenalar olsun Cenab-ı Hakka beni bu rütbeye kadar işal etti.Yine mukadderati ilahiye olarak beni
+
+            Hamdu şenalar olsun Cenab-ı Hakka beni bu rütbeye kadar işal etti.Yine mukadderati ilahiye olarak beni
             asker yaptı.Siz de ebeveynim olmak dolayısıyla beni vatan ve
             millete hizmet etmek için ne suretle yetiştirmek mümkün ise öylece yetiştirdiniz.Sebeb-i Feyz-u refikim ve
             hayatım oldunuz.Cenab-ı Hakk’a ve sizlere çok teşekkürler
             ederim.
-        </item>
-        <item>Şimdiye kadar milletin bana verdiği parayı hak etmek zamanıdır.Vazife-i mukaddese-i vataniyeyi ifaya
+
+            Şimdiye kadar milletin bana verdiği parayı hak etmek zamanıdır.Vazife-i mukaddese-i vataniyeyi ifaya
             cehdediyorum.Rütbe-işehadete suudedersem Cenab-ı Hakk’inen sevimli
             kulu olduğuma kanaat edeceğim.Asker olduğum için bu her zaman bana pek yakındır,sevgili babacığım ve
             valideciğim.Göz bebeğim olan zevcem Münevver ve oğlum Nezih’ciğimi
             evvele Cenab-ı Hakk’in saniyen sizin himayenize tevdi ediyorum.Onlar hakkında ne mümkün ise lütfen yapınız.
-        </item>
-        <item>Oğlumun talim ve terbiyesine siz de refikamla birlikte lütfen sayediniz.Servetimizin olmadığı
+
+            Oğlumun talim ve terbiyesine siz de refikamla birlikte lütfen sayediniz.Servetimizin olmadığı
             malumdur.Mümkün olandan fazla birşeyi isteyemem,istesem de pek
             beyhudedir.Refikama hitaben yazdığım matuf mektubu lütfen kendi eline veriniz.Fakat çok müteessir
             olacaktır,o teessürü izale edecek veçhile veriniz.Ağlayacak üzülecek
@@ -9177,27 +9176,27 @@
             ettiğim deftere ehemmiyet veriniz.Münevver’in hafızasında ve
             yahut kendi defterinde mukayyet duyunat da doğrudur.Münevver’e yazdığım mektubum daha
             müfassaldır.kendisinden sorunuz.
-        </item>
-        <item>Sevgili baba ve valideciğim ,</item>
-        <item>Belki bilmeyerek size karşı birçok kusurlarda bulunmuşumdur.Beni affediniz,hakkınızı helal ediniz,ruhumu
+
+            Sevgili baba ve valideciğim ,
+            Belki bilmeyerek size karşı birçok kusurlarda bulunmuşumdur.Beni affediniz,hakkınızı helal ediniz,ruhumu
             sadediniz,işlerimizi tavsiyesinde refikama muavenet ediniz ve
             muin olunuz.
-        </item>
-        <item>Sevgili Hemşirem Lütfiye’çığım,</item>
-        <item>Bilirsiniz ki sizi çok severdim.Sizin için vesayemin yettiği nisbette ne yapmak lazımsa yapmak
+
+            Sevgili Hemşirem Lütfiye’çığım,
+            Bilirsiniz ki sizi çok severdim.Sizin için vesayemin yettiği nisbette ne yapmak lazımsa yapmak
             isterdim.Belki size karşı da kusur etmişimdir,beni affet ,mukadderati
             ilahiye böyle imiş hakkını helal et ruhumu sadet , yengeniz Münevver hanımla oğlum Nezih’e sen de yardım et
             , sizi de Cenab-ı Hakk’in lütuf ve himayesine tevdi
             ediyorum.
-        </item>
-        <item>Ey akraba ve ehibba ve evda , cümlenize elveda , cümleniz hakkınızı helal ediniz.Bnim tarafımdan cümlenize
+
+            Ey akraba ve ehibba ve evda , cümlenize elveda , cümleniz hakkınızı helal ediniz.Bnim tarafımdan cümlenize
             hakkım helal olsun.Elveda , elveda..Cümlenizi Cenab-ı Hakk’a
             tevdi ve emanet ediyorum..
-        </item>
-        <item>Ebediyen Allah’a ısmarladım.</item>
-        <item>Sevgili Babacığım ve Valideciğim…</item>
-        <item>Oğlunuz Mehmet Tevfik</item>
-        <item>(Mehmet Tevfik , 2 Haziran 1915 günü yaralanmış ve Çanakkale Askeri Hastanesi’nde şehitlik rütbesine
+
+            Ebediyen Allah’a ısmarladım.
+            Sevgili Babacığım ve Valideciğim…
+            Oğlunuz Mehmet Tevfik
+            (Mehmet Tevfik , 2 Haziran 1915 günü yaralanmış ve Çanakkale Askeri Hastanesi’nde şehitlik rütbesine
             ulaşmıştır.)
         </item>
     </string-array>
