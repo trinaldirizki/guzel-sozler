@@ -14,9 +14,9 @@
     <string name="credits_bottom">© 2018 Cookie. All rights reserved</string>
     <string name="title_removed_from_favorites">Favorilerim\'den çıkarıldı</string>
     <string name="application_logo">Application Logo</string>
-    <string name="admob_app_id">ca-app-pub-8280979181770378~1600882514</string>
-    <string name="admob_interstitial_id">ca-app-pub-8280979181770378/8964367213</string>
-    <string name="admob_banner_id">ca-app-pub-8280979181770378/5950766033</string>
+    <string name="admob_app_id">ca-app-pub-6370973385232359~5055532474</string>
+    <string name="admob_interstitial_id">ca-app-pub-6370973385232359/2291915564</string>
+    <string name="admob_banner_id">ca-app-pub-6370973385232359/5264304084</string>
     <string name="category_click_info">Kategoriye gitmek için basılı tut</string>
     <string name="admob_banner_default">ca-app-pub-3940256099942544/6300978111</string>
     <string name="admob_interstitial_default">ca-app-pub-3940256099942544/1033173712</string>
